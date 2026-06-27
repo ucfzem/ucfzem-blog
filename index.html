@@ -743,6 +743,100 @@
         gap: 0.5rem;
       }
     }
+
+    /* ─── FOOTER ─── */
+    .blog-footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+      padding: 2.5rem 1.5rem 1.5rem;
+    }
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .footer-brand {
+      margin-bottom: 1.5rem;
+    }
+    .footer-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+    }
+    .footer-tagline {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+      line-height: 1.5;
+    }
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .footer-col h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.6rem;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.25rem 0;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover {
+      color: var(--gold);
+    }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .footer-bottom p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin: 0;
+    }
+    .footer-legal {
+      display: flex;
+      gap: 1rem;
+    }
+    .footer-legal a {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-legal a:hover {
+      color: var(--gold);
+    }
+    [dir="rtl"] .footer-links {
+      text-align: right;
+    }
+    @media (max-width: 600px) {
+      .footer-links {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -812,6 +906,43 @@
         </div>
       </div>
     </article>
+
+    <!-- Footer -->
+    <footer class="blog-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">UcfZem Tech</span>
+          <p class="footer-tagline" data-i18n="footer_tagline">Guides techniques, tutors et outils pour développeurs et e-commerçants.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4 data-i18n="footer_nav">Navigation</h4>
+            <a href="https://ucfzem.github.io/" data-i18n="footer_home">Accueil</a>
+            <a href="https://ucfzem.github.io/works/" data-i18n="footer_works">Mes Projets</a>
+            <a href="https://ucfzem.github.io/ucfzem-blog/" data-i18n="footer_blog">Blog</a>
+          </div>
+          <div class="footer-col">
+            <h4 data-i18n="footer_projects">Projets</h4>
+            <a href="https://ucfzem.github.io/guide-freelance/" data-i18n="footer_guide">Guide Freelance</a>
+            <a href="https://elixir-techx.vercel.app/">ElixirTechx</a>
+            <a href="https://500-prompts-ia.vercel.app/">500 Prompts IA</a>
+          </div>
+          <div class="footer-col">
+            <h4 data-i18n="footer_contact">Contact</h4>
+            <a href="https://github.com/ucfzem">GitHub</a>
+            <a href="mailto:azer.tyu199p@gmail.com" data-i18n="footer_email">Email</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p data-i18n="footer_copy">© 2026 UcfZem Tech. Tous droits réservés.</p>
+          <div class="footer-legal">
+            <a href="#" data-i18n="footer_legal">Mentions légales</a>
+            <a href="#" data-i18n="footer_cgv">CGV</a>
+            <a href="#" data-i18n="footer_privacy">Confidentialité</a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
 
   <!-- Back to Top -->
@@ -835,6 +966,22 @@
         newsletter_placeholder: "votre@email.com",
         newsletter_btn: "S'abonner",
         related_title: "📖 Articles connexes",
+        footer_nav: "Navigation",
+        footer_projects: "Projets",
+        footer_contact: "Contact",
+        footer_home: "Accueil",
+        footer_works: "Mes Projets",
+        footer_blog: "Blog",
+        footer_guide: "Guide Freelance",
+        footer_elixir: "ElixirTechx",
+        footer_prompts: "500 Prompts IA",
+        footer_github: "GitHub",
+        footer_email: "Email",
+        footer_copy: "© 2026 UcfZem Tech. Tous droits réservés.",
+        footer_legal: "Mentions légales",
+        footer_cgv: "CGV",
+        footer_privacy: "Confidentialité",
+        footer_tagline: "Guides techniques, tutors et outils pour développeurs et e-commerçants.",
         toc_items: [
           { id: "intro", text: "Introduction" },
           { id: "section1", text: "1. Le Pipeline Technique" },
@@ -1100,6 +1247,22 @@
         newsletter_placeholder: "your@email.com",
         newsletter_btn: "Subscribe",
         related_title: "📖 Related Articles",
+        footer_nav: "Navigation",
+        footer_projects: "Projects",
+        footer_contact: "Contact",
+        footer_home: "Home",
+        footer_works: "My Works",
+        footer_blog: "Blog",
+        footer_guide: "Freelancer Guide",
+        footer_elixir: "ElixirTechx",
+        footer_prompts: "500 Prompts IA",
+        footer_github: "GitHub",
+        footer_email: "Email",
+        footer_copy: "© 2026 UcfZem Tech. All rights reserved.",
+        footer_legal: "Legal",
+        footer_cgv: "Terms",
+        footer_privacy: "Privacy",
+        footer_tagline: "Technical guides, tutorials and tools for developers and e-commerce.",
         toc_items: [
           { id: "intro", text: "Introduction" },
           { id: "section1", text: "1. The Technical Pipeline" },
@@ -1365,6 +1528,22 @@
         newsletter_placeholder: "tu@email.com",
         newsletter_btn: "Suscribirse",
         related_title: "📖 Artículos Relacionados",
+        footer_nav: "Navegación",
+        footer_projects: "Proyectos",
+        footer_contact: "Contacto",
+        footer_home: "Inicio",
+        footer_works: "Mis Proyectos",
+        footer_blog: "Blog",
+        footer_guide: "Guía Freelance",
+        footer_elixir: "ElixirTechx",
+        footer_prompts: "500 Prompts IA",
+        footer_github: "GitHub",
+        footer_email: "Email",
+        footer_copy: "© 2026 UcfZem Tech. Todos los derechos reservados.",
+        footer_legal: "Aviso legal",
+        footer_cgv: "Términos",
+        footer_privacy: "Privacidad",
+        footer_tagline: "Guías técnicos, tutoriales y herramientas para desarrolladores y e-commerce.",
         toc_items: [
           { id: "intro", text: "Introducción" },
           { id: "section1", text: "1. El Pipeline Técnico" },
@@ -1630,6 +1809,22 @@
         newsletter_placeholder: "بريدك@البريد.com",
         newsletter_btn: "اشتراك",
         related_title: "📖 مقالات ذات صلة",
+        footer_nav: "التنقل",
+        footer_projects: "المشاريع",
+        footer_contact: "اتصل بنا",
+        footer_home: "الرئيسية",
+        footer_works: "أعمالي",
+        footer_blog: "المدونة",
+        footer_guide: "دليل المستقلين",
+        footer_elixir: "ElixirTechx",
+        footer_prompts: "500 Prompts IA",
+        footer_github: "GitHub",
+        footer_email: "البريد الإلكتروني",
+        footer_copy: "© 2026 UcfZem Tech. جميع الحقوق محفوظة.",
+        footer_legal: "الإشعارات القانونية",
+        footer_cgv: "الشروط",
+        footer_privacy: "الخصوصية",
+        footer_tagline: "أدلة تقنية ودروس وأدوات للمطورين والتجارة الإلكترونية.",
         toc_items: [
           { id: "intro", text: "المقدمة" },
           { id: "section1", text: "1. خطوات خط الأنفاق التقني" },
