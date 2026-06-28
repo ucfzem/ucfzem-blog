@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Automate E-commerce Product Page Creation with Next.js and the ChatGPT API | UcfZem Tech</title>
+  <meta name="description" content="Learn how to automate e-commerce product page creation with Next.js and the ChatGPT API. Step-by-step guide with Next.js API Routes, React components, and OpenAI integration.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="How to Automate E-commerce Product Page Creation with Next.js and the ChatGPT API">
+  <meta property="og:description" content="Learn how to automate e-commerce product page creation with Next.js and the ChatGPT API. Step-by-step guide with Next.js API Routes, React components, and OpenAI integration.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  
+    <link rel="alternate" hreflang="fr" href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/" />
+    <link rel="alternate" hreflang="en" href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/en.html" />
+    <link rel="alternate" hreflang="es" href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/es.html" />
+    <link rel="alternate" hreflang="ar" href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/ar.html" />
+    <link rel="alternate" hreflang="x-default" href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Automate E-commerce Product Page Creation with Next.js and the ChatGPT API">
+  <meta name="twitter:description" content="Learn how to automate e-commerce product page creation with Next.js and the ChatGPT API. Step-by-step guide with Next.js API Routes, React components, and OpenAI integration.">
+  <link rel="canonical" href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/en.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Automate E-commerce Product Page Creation with Next.js and the ChatGPT API",
+    "author": {
+      "@type": "Person",
+      "name": "UcfZem Tech"
+    },
+    "datePublished": "2026-06-28",
+    "dateModified": "2026-06-28",
+    "description": "Learn how to automate e-commerce product page creation with Next.js and the ChatGPT API. Step-by-step guide with Next.js API Routes, React components, and OpenAI integration.",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/en.html"
+    }
+  }
+  </script>
+  <style>
+
+    :root {
+      --bg-primary: #FAF3E8;
+      --bg-secondary: #F0E6D3;
+      --bg-card: #FFFFFF;
+      --text-primary: #2C1A06;
+      --text-secondary: #5C4A2E;
+      --text-muted: #8B7355;
+      --accent: #C9A84C;
+      --accent-hover: #B8963A;
+      --border: #E0D5C0;
+      --code-bg: #1A1208;
+      --code-text: #F5ECD7;
+      --shadow: rgba(44, 26, 6, 0.1);
+      --progress-bg: #E0D5C0;
+      --progress-fill: #C9A84C;
+      --badge-bg: #C9A84C;
+      --badge-text: #1A1208;
+      --table-header: #F0E6D3;
+      --table-row-alt: #FAF3E8;
+      --toc-bg: #FFFFFF;
+      --newsletter-bg: #F0E6D3;
+      --cta-bg: linear-gradient(135deg, #C9A84C, #F0C866);
+      --cta-text: #1A1208;
+      --related-bg: #FFFFFF;
+      --tag-bg: #F0E6D3;
+      --tag-text: #5C4A2E;
+    }
+
+    [data-theme="dark"] {
+      --bg-primary: #1A1208;
+      --bg-secondary: #2A1E10;
+      --bg-card: #2A1E10;
+      --text-primary: #F5ECD7;
+      --text-secondary: #D4C4A8;
+      --text-muted: #A89878;
+      --accent: #C9A84C;
+      --accent-hover: #F0C866;
+      --border: #3D2E1A;
+      --code-bg: #0D0A04;
+      --code-text: #F5ECD7;
+      --shadow: rgba(0, 0, 0, 0.3);
+      --progress-bg: #3D2E1A;
+      --progress-fill: #C9A84C;
+      --badge-bg: #C9A84C;
+      --badge-text: #1A1208;
+      --table-header: #2A1E10;
+      --table-row-alt: #1A1208;
+      --toc-bg: #2A1E10;
+      --newsletter-bg: #2A1E10;
+      --cta-bg: linear-gradient(135deg, #C9A84C, #F0C866);
+      --cta-text: #1A1208;
+      --related-bg: #2A1E10;
+      --tag-bg: #3D2E1A;
+      --tag-text: #D4C4A8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Cinzel', serif;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: var(--accent-hover);
+    }
+
+    /* Progress Bar */
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: var(--progress-fill);
+      z-index: 10000;
+      transition: width 0.1s;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      position: fixed;
+      top: 3px;
+      left: 0;
+      right: 0;
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      padding: 0.6rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 9999;
+      box-shadow: 0 2px 8px var(--shadow);
+    }
+
+    .top-bar-left {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--accent);
+    }
+
+    .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .lang-switcher {
+      display: flex;
+      gap: 0.3rem;
+      background: var(--bg-secondary);
+      padding: 0.25rem;
+      border-radius: 8px;
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      padding: 0.35rem 0.6rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      color: var(--text-secondary);
+    }
+
+    .lang-btn.active {
+      background: var(--accent);
+      color: var(--badge-text);
+      font-weight: 600;
+    }
+
+    .lang-btn:hover:not(.active) {
+      background: var(--border);
+    }
+
+    .theme-toggle {
+      background: var(--bg-secondary);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: all 0.2s;
+      color: var(--text-primary);
+    }
+
+    .theme-toggle:hover {
+      background: var(--border);
+      transform: rotate(20deg);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2rem 2rem;
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 3rem;
+    }
+
+    /* Table of Contents */
+    .toc {
+      position: sticky;
+      top: 5rem;
+      height: fit-content;
+      max-height: calc(100vh - 7rem);
+      overflow-y: auto;
+      background: var(--toc-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .toc h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .toc ul {
+      list-style: none;
+    }
+
+    .toc li {
+      margin-bottom: 0.5rem;
+    }
+
+    .toc a {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      display: block;
+      padding: 0.3rem 0.5rem;
+      border-radius: 6px;
+      border-left: 2px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .toc a:hover, .toc a.active {
+      color: var(--accent);
+      background: var(--bg-secondary);
+      border-left-color: var(--accent);
+    }
+
+    /* Article */
+    .article {
+      min-width: 0;
+    }
+
+    .article-badge {
+      display: inline-block;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .article-title {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .article-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .share-bar {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .share-btn {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .share-btn:hover {
+      background: var(--accent);
+      color: var(--badge-text);
+      border-color: var(--accent);
+    }
+
+    .article-content h2 {
+      font-size: 1.6rem;
+      margin: 2.5rem 0 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .article-content h3 {
+      font-size: 1.2rem;
+      margin: 2rem 0 0.8rem;
+    }
+
+    .article-content p {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+
+    .article-content ul, .article-content ol {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+      color: var(--text-secondary);
+    }
+
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .article-content strong {
+      color: var(--text-primary);
+    }
+
+    /* Code Blocks */
+    pre {
+      background: var(--code-bg);
+      color: var(--code-text);
+      padding: 1.2rem;
+      border-radius: 10px;
+      overflow-x: auto;
+      margin: 1.2rem 0;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    pre code {
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    }
+
+    code {
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      background: var(--bg-secondary);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.88em;
+      color: var(--accent);
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      color: inherit;
+    }
+
+    .code-lang {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.8rem;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Syntax highlighting */
+    .kw { color: #C9A84C; }
+    .str { color: #A8D4A0; }
+    .cm { color: #6B6B6B; font-style: italic; }
+    .fn { color: #88C0D0; }
+    .num { color: #D19A66; }
+    .type { color: #E5C07B; }
+    .op { color: #56B6C2; }
+    .prop { color: #E06C75; }
+    .tag { color: #C9A84C; }
+    .attr { color: #D19A66; }
+    .val { color: #98C379; }
+
+    /* Comparison Table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .comparison-table th {
+      background: var(--table-header);
+      padding: 0.8rem 1rem;
+      text-align: left;
+      font-weight: 600;
+      font-family: 'Cinzel', serif;
+      font-size: 0.9rem;
+      color: var(--text-primary);
+    }
+
+    .comparison-table td {
+      padding: 0.7rem 1rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .comparison-table tr:nth-child(even) td {
+      background: var(--table-row-alt);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: var(--cta-bg);
+      color: var(--cta-text);
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .cta-section h3 {
+      color: var(--cta-text);
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+
+    .cta-section p {
+      color: var(--cta-text);
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-btn {
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .cta-btn-primary {
+      background: var(--cta-text);
+      color: var(--accent);
+    }
+
+    .cta-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .cta-btn-secondary {
+      background: transparent;
+      color: var(--cta-text);
+      border: 2px solid var(--cta-text);
+    }
+
+    .cta-btn-secondary:hover {
+      background: var(--cta-text);
+      color: var(--accent);
+    }
+
+    /* Newsletter */
+    .newsletter {
+      background: var(--newsletter-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+
+    .newsletter h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .newsletter p {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 0.7rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+    }
+
+    .newsletter-form input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .newsletter-form button {
+      padding: 0.7rem 1.2rem;
+      background: var(--accent);
+      color: var(--badge-text);
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .newsletter-form button:hover {
+      background: var(--accent-hover);
+    }
+
+    /* Related Articles */
+    .related {
+      margin: 3rem 0 2rem;
+    }
+
+    .related h3 {
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .related-card {
+      background: var(--related-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.2rem;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px var(--shadow);
+    }
+
+    .related-card-tag {
+      display: inline-block;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .related-card h4 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .related-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Back to Top */
+    #back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 48px;
+      height: 48px;
+      background: var(--accent);
+      color: var(--badge-text);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+      z-index: 9998;
+      box-shadow: 0 4px 12px rgba(201, 168, 76, 0.3);
+    }
+
+    #back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #back-to-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(201, 168, 76, 0.4);
+    }
+
+    /* RTL Support */
+    [dir="rtl"] {
+      text-align: right;
+    }
+
+    [dir="rtl"] .toc {
+      border-left: none;
+      border-right: 1px solid var(--border);
+    }
+
+    [dir="rtl"] .toc a {
+      border-left: none;
+      border-right: 2px solid transparent;
+    }
+
+    [dir="rtl"] .toc a:hover,
+    [dir="rtl"] .toc a.active {
+      border-left-color: transparent;
+      border-right-color: var(--accent);
+    }
+
+    [dir="rtl"] .article-content ul,
+    [dir="rtl"] .article-content ol {
+      padding-left: 0;
+      padding-right: 1.5rem;
+    }
+
+    /* Mobile TOC */
+    .mobile-toc-toggle {
+      display: none;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    [dir="rtl"] .mobile-toc-toggle {
+      text-align: right;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+        padding: 4.5rem 1rem 1rem;
+      }
+
+      .toc {
+        position: static;
+        display: none;
+        max-height: none;
+      }
+
+      .toc.open {
+        display: block;
+      }
+
+      .mobile-toc-toggle {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .article-title {
+        font-size: 1.6rem;
+      }
+
+      .top-bar {
+        padding: 0.5rem 1rem;
+      }
+
+      .lang-btn span.lang-label {
+        display: none;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .article-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+    }
+
+    /* ─── FOOTER ─── */
+    .blog-footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+      padding: 2.5rem 1.5rem 1.5rem;
+    }
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .footer-brand {
+      margin-bottom: 1.5rem;
+    }
+    .footer-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+    }
+    .footer-tagline {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+      line-height: 1.5;
+    }
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .footer-col h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.6rem;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.25rem 0;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover {
+      color: var(--gold);
+    }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .footer-bottom p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin: 0;
+    }
+    .footer-legal {
+      display: flex;
+      gap: 1rem;
+    }
+    .footer-legal a {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-legal a:hover {
+      color: var(--gold);
+    }
+    [dir="rtl"] .footer-links {
+      text-align: right;
+    }
+    @media (max-width: 600px) {
+      .footer-links {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  
+  </style>
+</head>
+<body>
+  <div id="progress-bar"></div>
+
+  <nav class="top-bar">
+    <div class="top-bar-left">UcfZem Tech</div>
+    <div class="top-bar-right">
+      
+      <div class="lang-switcher">
+        <a href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/" class="lang-btn" title="Français">🇫🇷 <span class="lang-label">FR</span></a>
+        <a href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/en.html" class="lang-btn active" title="English">🇬🇧 <span class="lang-label">EN</span></a>
+        <a href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/es.html" class="lang-btn" title="Español">🇪🇸 <span class="lang-label">ES</span></a>
+        <a href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/ar.html" class="lang-btn" title="العربية">🇲🇦 <span class="lang-label">AR</span></a>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" title="Toggle theme">🌙</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <aside>
+      <button class="mobile-toc-toggle" id="toc-toggle">☰ Table of Contents</button>
+      <div class="toc" id="toc">
+        <h3>Table of Contents</h3>
+        <ul id="toc-list">
+          <li><a href="#intro">Introduction</a></li>
+            <li><a href="#section1">1. The Technical Pipeline</a></li>
+            <li><a href="#section2">2. Pitfalls to Avoid</a></li>
+            <li><a href="#section3">3. Level Up</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <article class="article">
+      <span class="article-badge">🔄 Updated: June 2026</span>
+      <h1 class="article-title">How to Automate E-commerce Product Page Creation with Next.js and the ChatGPT API</h1>
+
+      <div class="article-meta">
+        <span>✍️ UcfZem Tech</span>
+        <span>📅 June 2026</span>
+        <span>⏱️ 12 min read</span>
+      </div>
+
+      <div class="share-bar">
+        <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.href).then(() => { const b=this; const o=b.innerHTML; b.innerHTML='✅ Copié!'; setTimeout(()=>b.innerHTML=o,2000); })">🔗 Copy link</button>
+        <button class="share-btn" onclick="window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(window.location.href),'_blank')">🐦 Twitter</button>
+        <button class="share-btn" onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(window.location.href),'_blank')">💼 LinkedIn</button>
+      </div>
+
+      <div class="article-content">
+        
+          <h2 id="intro">Introduction: The Product Page Nightmare</h2>
+          <p>You have <strong>200 products</strong> to list online. Each page needs an SEO-optimized title, engaging description, technical specs, and meta descriptions. At manual speed, that's <strong>3 weeks of repetitive work</strong> — and your competitors have already launched their catalog.</p>
+          <p>In this guide, we'll build a <strong>complete automation pipeline</strong> that transforms a simple CSV of products into publish-ready e-commerce pages, combining the power of <strong>Next.js</strong> with the intelligence of <strong>ChatGPT</strong>.</p>
+
+          <h2 id="section1">Section 1: The Technical Pipeline Step by Step</h2>
+          <h3>1.1 Overall Architecture</h3>
+          <p>Our solution rests on three pillars:</p>
+          <ul>
+            <li><strong>A structured CSV</strong> containing your raw product data</li>
+            <li><strong>A Next.js API Route</strong> that orchestrates the OpenAI call</li>
+            <li><strong>A React component</strong> that displays and manages real-time generation</li>
+          </ul>
+
+          <h3>1.2 The Next.js API Route</h3>
+          <p>This is the heart of our system. Here's the endpoint that receives product data and returns generated content:</p>
+
+          <pre><code><span class="code-lang">TypeScript</span>
+<span class="cm">// app/api/generate-product/route.ts</span>
+<span class="kw">import</span> { NextRequest, NextResponse } <span class="kw">from</span> <span class="str">'next/server'</span>;
+<span class="kw">import</span> OpenAI <span class="kw">from</span> <span class="str">'openai'</span>;
+
+<span class="kw">const</span> openai = <span class="kw">new</span> <span class="fn">OpenAI</span>({
+  apiKey: process.env.<span class="prop">OPENAI_API_KEY</span>,
+});
+
+<span class="kw">interface</span> <span class="type">ProductInput</span> {
+  name: <span class="type">string</span>;
+  category: <span class="type">string</span>;
+  price: <span class="type">number</span>;
+  features: <span class="type">string</span>[];
+  brand?: <span class="type">string</span>;
+}
+
+<span class="kw">export async function</span> <span class="fn">POST</span>(request: <span class="type">NextRequest</span>) {
+  <span class="kw">try</span> {
+    <span class="kw">const</span> product: <span class="type">ProductInput</span> = <span class="kw">await</span> request.<span class="fn">json</span>();
+
+    <span class="kw">const</span> prompt = <span class="str">`
+      You are an expert e-commerce SEO copywriter.
+      Generate a complete product page for:
+      - Name: ${product.name}
+      - Category: ${product.category}
+      - Price: ${product.price}€
+      - Brand: ${product.brand || 'Not specified'}
+      - Features: ${product.features.join(', ')}
+
+      Provide: SEO title (max 60 chars), meta description
+      (max 155 chars), full description, and 5 bullet points.
+      `</span>;
+
+    <span class="kw">const</span> completion = <span class="kw">await</span> openai.chat.completions.<span class="fn">create</span>({
+      model: <span class="str">'gpt-4o'</span>,
+      messages: [{ role: <span class="str">'user'</span>, content: prompt }],
+      temperature: <span class="num">0.7</span>,
+      max_tokens: <span class="num">1500</span>,
+    });
+
+    <span class="kw">const</span> generatedContent = completion.choices[<span class="num">0</span>].message?.content;
+
+    <span class="kw">return</span> NextResponse.<span class="fn">json</span>({
+      success: <span class="num">true</span>,
+      content: generatedContent,
+      usage: completion.usage,
+    });
+  } <span class="kw">catch</span> (error) {
+    <span class="kw">return</span> NextResponse.<span class="fn">json</span>(
+      { success: <span class="num">false</span>, error: <span class="str">'Generation error'</span> },
+      { status: <span class="num">500</span> }
+    );
+  }
+}</code></pre>
+
+          <h3>1.3 The React Frontend Component</h3>
+          <p>A clean component that handles submission and result display:</p>
+
+          <pre><code><span class="code-lang">TypeScript</span>
+<span class="cm">// components/ProductGenerator.tsx</span>
+<span class="str">'use client'</span>;
+<span class="kw">import</span> { useState } <span class="kw">from</span> <span class="str">'react'</span>;
+
+<span class="kw">export default function</span> <span class="fn">ProductGenerator</span>() {
+  <span class="kw">const</span> [loading, setLoading] = <span class="fn">useState</span>(<span class="num">false</span>);
+  <span class="kw">const</span> [result, setResult] = <span class="fn">useState</span>(<span class="str">''</span>);
+  <span class="kw">const</span> [form, setForm] = <span class="fn">useState</span>({
+    name: <span class="str">''</span>, category: <span class="str">''</span>,
+    price: <span class="num">0</span>, features: <span class="str">''</span>,
+  });
+
+  <span class="kw">const</span> <span class="fn">handleSubmit</span> = <span class="kw">async</span> (e: React.FormEvent) =&gt; {
+    e.<span class="fn">preventDefault</span>();
+    <span class="fn">setLoading</span>(<span class="num">true</span>);
+
+    <span class="kw">const</span> res = <span class="kw">await</span> <span class="fn">fetch</span>(<span class="str">'/api/generate-product'</span>, {
+      method: <span class="str">'POST'</span>,
+      headers: { <span class="str">'Content-Type'</span>: <span class="str">'application/json'</span> },
+      body: JSON.<span class="fn">stringify</span>({
+        ...form,
+        price: <span class="fn">Number</span>(form.price),
+        features: form.features.<span class="fn">split</span>(<span class="str">','</span>).<span class="fn">map</span>(f =&gt; f.<span class="fn">trim</span>()),
+      }),
+    });
+
+    <span class="kw">const</span> data = <span class="kw">await</span> res.<span class="fn">json</span>();
+    <span class="fn">setResult</span>(data.content);
+    <span class="fn">setLoading</span>(<span class="num">false</span>);
+  };
+
+  <span class="kw">return</span> (
+    &lt;<span class="tag">div</span> <span class="attr">className</span>=<span class="val">"generator-card"</span>&gt;
+      &lt;<span class="tag">h2</span>&gt;Product Page Generator&lt;/<span class="tag">h2</span>&gt;
+      &lt;<span class="tag">form</span> <span class="attr">onSubmit</span>={handleSubmit}&gt;
+        &lt;<span class="tag">input</span> <span class="attr">placeholder</span>=<span class="val">"Product name"</span>
+          <span class="attr">onChange</span>={e =&gt; <span class="fn">setForm</span>({...form, name: e.target.value})} /&gt;
+        &lt;<span class="tag">input</span> <span class="attr">placeholder</span>=<span class="val">"Category"</span>
+          <span class="attr">onChange</span>={e =&gt; <span class="fn">setForm</span>({...form, category: e.target.value})} /&gt;
+        &lt;<span class="tag">input</span> <span class="attr">type</span>=<span class="val">"number"</span> <span class="attr">placeholder</span>=<span class="val">"Price"</span>
+          <span class="attr">onChange</span>={e =&gt; <span class="fn">setForm</span>({...form, price: e.target.value})} /&gt;
+        &lt;<span class="tag">textarea</span> <span class="attr">placeholder</span>=<span class="val">"Features (comma separated)"</span>
+          <span class="attr">onChange</span>={e =&gt; <span class="fn">setForm</span>({...form, features: e.target.value})} /&gt;
+        &lt;<span class="tag">button</span> <span class="attr">type</span>=<span class="val">"submit"</span> <span class="attr">disabled</span>={loading}&gt;
+          {loading ? <span class="str">'Generating...'</span> : <span class="str">'Generate page'</span>}
+        &lt;/<span class="tag">button</span>&gt;
+      &lt;/<span class="tag">form</span>&gt;
+      {result &amp;&amp; (
+        &lt;<span class="tag">div</span> <span class="attr">className</span>=<span class="val">"result"</span>
+          <span class="attr">dangerouslySetInnerHTML</span>={{ __html: result }} /&gt;
+      )}
+    &lt;/<span class="tag">div</span>&gt;
+  );
+}</code></pre>
+
+          <h3>1.4 The .env.local File</h3>
+          <p>Never expose your API keys on the client side:</p>
+
+          <pre><code><span class="code-lang">env</span>
+<span class="cm"># .env.local</span>
+<span class="prop">OPENAI_API_KEY</span>=<span class="str">sk-your-api-key-here</span>
+<span class="prop">NEXT_PUBLIC_SITE_URL</span>=<span class="str">https://your-site.com</span>
+<span class="prop">RATE_LIMIT_MAX</span>=<span class="num">50</span>
+<span class="prop">RATE_LIMIT_WINDOW</span>=<span class="num">60000</span></code></pre>
+
+          <h3>1.5 The Rate Limiter</h3>
+          <p>Protect your endpoint against abuse:</p>
+
+          <pre><code><span class="code-lang">TypeScript</span>
+<span class="cm">// lib/rate-limiter.ts</span>
+<span class="kw">const</span> requests = <span class="kw">new</span> <span class="fn">Map</span>&lt;<span class="type">string</span>, <span class="type">number</span>[]&gt;();
+
+<span class="kw">export function</span> <span class="fn">rateLimit</span>(
+  ip: <span class="type">string</span>,
+  maxRequests = <span class="num">50</span>,
+  windowMs = <span class="num">60000</span>
+): <span class="type">boolean</span> {
+  <span class="kw">const</span> now = Date.<span class="fn">now</span>();
+  <span class="kw">const</span> timestamps = requests.<span class="fn">get</span>(ip) || [];
+  <span class="kw">const</span> valid = timestamps.<span class="fn">filter</span>(t =&gt; now - t &lt; windowMs);
+
+  <span class="kw">if</span> (valid.length &gt;= maxRequests) <span class="kw">return false</span>;
+
+  valid.<span class="fn">push</span>(now);
+  requests.<span class="fn">set</span>(ip, valid);
+  <span class="kw">return true</span>;
+}</code></pre>
+
+          <h2 id="section2">Section 2: Pitfalls to Avoid and Best Practices</h2>
+          <p>Here are the most common mistakes and how to overcome them:</p>
+
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th data-i18n="table_mistake">❌ Common Mistake</th>
+                <th data-i18n="table_solution">✅ Solution</th>
+                <th data-i18n="table_impact">💡 Impact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-i18n="table_r1">Sending the entire catalog at once</td>
+                <td data-i18n="table_s1">Process in batches of 10-20 products</td>
+                <td data-i18n="table_i1">Reduces timeouts by 90%</td>
+              </tr>
+              <tr>
+                <td data-i18n="table_r2">No validation of AI responses</td>
+                <td data-i18n="table_s2">Parse and validate the returned JSON</td>
+                <td data-i18n="table_i2">Eliminates 100% of display errors</td>
+              </tr>
+              <tr>
+                <td data-i18n="table_r3">API key exposed on client side</td>
+                <td data-i18n="table_s3">Use API Routes exclusively</td>
+                <td data-i18n="table_i3">Critical security</td>
+              </tr>
+              <tr>
+                <td data-i18n="table_r4">No rate limiting</td>
+                <td data-i18n="table_s4">Implement an IP-based counter</td>
+                <td data-i18n="table_i4">Avoids surprise bills</td>
+              </tr>
+              <tr>
+                <td data-i18n="table_r5">Unverified generated content</td>
+                <td data-i18n="table_s5">Human review + moderation filter</td>
+                <td data-i18n="table_i5">Quality and legal compliance</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><strong>Pitfall #1</strong>: sending raw prompts without structure. ChatGPT returns unstructured text. Solution: enforce a <strong>strict JSON format</strong> in your prompt and parse the response.</p>
+
+          <p><strong>Pitfall #2</strong>: ignoring tokens. Each GPT-4o call costs tokens. For 1000 products, it adds up fast. <strong>Tip</strong>: use GPT-4o-mini for simple descriptions and GPT-4o only for critical content.</p>
+
+          <h2 id="section3">Section 3: Level Up with UcfZem Tech</h2>
+          <p>The code above is an excellent starting point, but for large-scale production, you need:</p>
+          <ul>
+            <li><strong>Real-time monitoring</strong> — know how many products were generated, error rates, latencies</li>
+            <li><strong>Smart caching</strong> — never regenerate an identical product</li>
+            <li><strong>CMS integration</strong> — automatically push pages to Shopify, WooCommerce or your CMS</li>
+            <li><strong>Multi-language</strong> — generate pages in French, English, Spanish and Arabic automatically</li>
+          </ul>
+
+          <div class="cta-section">
+            <h3 data-i18n="cta_title">🚀 Ready to automate your catalog?</h3>
+            <p data-i18n="cta_desc">UcfZem Tech helps you implement custom e-commerce automation solutions.</p>
+            <div class="cta-buttons">
+              <button class="cta-btn cta-btn-primary" data-i18n="cta_primary">Start a project</button>
+              <button class="cta-btn cta-btn-secondary" data-i18n="cta_secondary">View our work</button>
+            </div>
+          </div>
+
+          <h2 id="conclusion">Conclusion: From Automation to Domination</h2>
+          <p>Product page automation isn't a luxury — it's a <strong>vital competitive advantage</strong>. With Next.js and ChatGPT, you have a fast, secure, and scalable pipeline.</p>
+          <p>Key steps to remember:</p>
+          <ol>
+            <li>Structure your product data in a clean CSV</li>
+            <li>Build a robust Next.js API Route with rate limiting</li>
+            <li>Always validate AI responses before insertion</li>
+            <li>Implement a cache to optimize API costs</li>
+            <li>Start small, then scale progressively</li>
+          </ol>
+          <p>Your competitors still spend their days writing product pages manually. You can <strong>automate the entire process</strong> and dedicate your time to what really matters: selling.</p>
+        
+      </div>
+
+      <div class="newsletter">
+        <h3>📬 Stay informed</h3>
+        <p>Get our latest technical articles and e-commerce tips directly in your inbox.</p>
+        <form class="newsletter-form" onsubmit="return false;">
+          <input type="email" placeholder="your@email.com">
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+
+      <div class="related">
+        <h3>📖 Related Articles</h3>
+        <div class="related-grid">
+          <div class="related-card">
+      <span class="related-card-tag">Next.js</span>
+      <h4>Optimizing SEO with Next.js App Router</h4>
+      <p>Complete guide for natural referencing.</p>
+    </div>
+          <div class="related-card">
+      <span class="related-card-tag">AI</span>
+      <h4>Integrating AI into your e-commerce workflow</h4>
+      <p>From chatbots to automatic descriptions.</p>
+    </div>
+          <div class="related-card">
+      <span class="related-card-tag">Performance</span>
+      <h4>Reducing Time to First Byte by 60%</h4>
+      <p>Advanced server optimization techniques.</p>
+    </div>
+        </div>
+      </div>
+    </article>
+
+    <footer class="blog-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">UcfZem Tech</span>
+          <p class="footer-tagline">Technical guides, tutorials and tools for developers and e-commerce.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <a href="https://ucfzem.github.io/">Home</a>
+            <a href="https://ucfzem.github.io/works/">My Works</a>
+            <a href="https://ucfzem.github.io/ucfzem-blog/">Blog</a>
+          </div>
+          <div class="footer-col">
+            <h4>Projects</h4>
+            <a href="https://ucfzem.github.io/guide-freelance/">Freelancer Guide</a>
+            <a href="https://elixir-techx.vercel.app/">ElixirTechx</a>
+            <a href="https://500-prompts-ia.vercel.app/">500 Prompts IA</a>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <a href="https://github.com/ucfzem">GitHub</a>
+            <a href="mailto:azer.tyu199p@gmail.com">Email</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 UcfZem Tech. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="#">Legal</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <button id="back-to-top" title="Back to top">↑</button>
+
+  <script>
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    let currentTheme = localStorage.getItem('theme') || 'light';
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+      localStorage.setItem('theme', theme);
+      currentTheme = theme;
+    }
+    themeToggle.addEventListener('click', () => {
+      applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+    applyTheme(currentTheme);
+
+    // Progress bar
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      document.getElementById('progress-bar').style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+    });
+
+    // Back to top
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 400);
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // TOC highlight
+    function initTOC() {
+      const headings = document.querySelectorAll('.article-content h2[id]');
+      const tocLinks = document.querySelectorAll('#toc-list a');
+      if (!headings.length || !tocLinks.length) return;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(link => link.classList.remove('active'));
+            const activeLink = document.querySelector(`#toc-list a[href="#${entry.target.id}"]`);
+            if (activeLink) activeLink.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+      headings.forEach(h => observer.observe(h));
+    }
+    initTOC();
+
+    // Mobile TOC toggle
+    document.getElementById('toc-toggle').addEventListener('click', () => {
+      document.getElementById('toc').classList.toggle('open');
+    });
+    document.getElementById('toc-list').addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        document.getElementById('toc').classList.remove('open');
+      }
+    });
+  </script>
+</body>
+</html>
