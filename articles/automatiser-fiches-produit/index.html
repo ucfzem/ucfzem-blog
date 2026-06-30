@@ -3,47 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comment Automatiser la Création de Fiches Produit E-commerce en Combinant Next.js et l'API de ChatGPT | UcfZem Tech</title>
-  <meta name="description" content="Apprenez à automatiser la création de fiches produit e-commerce en combinant Next.js et l'API de ChatGPT. Guide technique complet avec code source Next.js, API Route, et OpenAI.">
+  <title>Comment Automatiser la Création de Fiches Produit E-commerce | UcfZem Tech</title>
+  <meta name="description" content="Apprenez à automatiser la création de fiches produit e-commerce en combinant Next.js et l'API de ChatGPT. Guide technique complet avec code source.">
+  <meta name="keywords" content="Next.js, ChatGPT, API, e-commerce, automatisation, fiches produit, React, TypeScript">
+  <meta name="author" content="UcfZem Tech">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Comment Automatiser la Création de Fiches Produit E-commerce en Combinant Next.js et l'API de ChatGPT">
-  <meta property="og:description" content="Apprenez à automatiser la création de fiches produit e-commerce en combinant Next.js et l'API de ChatGPT. Guide technique complet avec code source Next.js, API Route, et OpenAI.">
+  <meta property="og:title" content="Automatiser les Fiches Produit E-commerce avec Next.js et ChatGPT">
+  <meta property="og:description" content="Guide technique complet pour automatiser la création de fiches produit e-commerce avec Next.js et l'API de ChatGPT.">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fr_FR">
-  
-    <link rel="alternate" hreflang="fr" href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/" />
-    <link rel="alternate" hreflang="en" href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/en.html" />
-    <link rel="alternate" hreflang="es" href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/es.html" />
-    <link rel="alternate" hreflang="ar" href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/ar.html" />
-    <link rel="alternate" hreflang="x-default" href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/" />
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:locale:alternate" content="ar_MA">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Comment Automatiser la Création de Fiches Produit E-commerce en Combinant Next.js et l'API de ChatGPT">
-  <meta name="twitter:description" content="Apprenez à automatiser la création de fiches produit e-commerce en combinant Next.js et l'API de ChatGPT. Guide technique complet avec code source Next.js, API Route, et OpenAI.">
-  <link rel="canonical" href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/">
+  <meta name="twitter:title" content="Automatiser les Fiches Produit E-commerce avec Next.js et ChatGPT">
+  <meta name="twitter:description" content="Guide technique complet pour automatiser la création de fiches produit e-commerce.">
+  <link rel="canonical" href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/">  <link rel="alternate" hreflang="fr" href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/" />
+  <link rel="alternate" hreflang="en" href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/en.html" />
+  <link rel="alternate" hreflang="es" href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/es.html" />
+  <link rel="alternate" hreflang="ar" href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/ar.html" />
+  <link rel="alternate" hreflang="x-default" href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Comment Automatiser la Création de Fiches Produit E-commerce en Combinant Next.js et l'API de ChatGPT",
-    "author": {
-      "@type": "Person",
-      "name": "UcfZem Tech"
-    },
-    "datePublished": "2026-06-28",
-    "dateModified": "2026-06-28",
-    "description": "Apprenez à automatiser la création de fiches produit e-commerce en combinant Next.js et l'API de ChatGPT. Guide technique complet avec code source Next.js, API Route, et OpenAI.",
-    "inLanguage": "fr",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/"
-    }
-  }
-  </script>
   <style>
-
     :root {
       --bg-primary: #FAF3E8;
       --bg-secondary: #F0E6D3;
@@ -166,6 +149,10 @@
       font-family: 'Cinzel', serif;
       font-weight: 700;
       font-size: 1.1rem;
+      color: var(--accent);
+    }
+
+    .top-bar-left a {
       color: var(--accent);
     }
 
@@ -858,59 +845,181 @@
         text-align: center;
       }
     }
-  
   </style>
 </head>
 <body>
   <div id="progress-bar"></div>
 
+  <!-- Top Bar -->
   <nav class="top-bar">
-    <div class="top-bar-left">UcfZem Tech</div>
+    <div class="top-bar-left"><a href="https://ucfzem.github.io/ucfzem-blog/" aria-label="UcfZem Tech - Accueil">UcfZem Tech</a></div>
     <div class="top-bar-right">
-      
       <div class="lang-switcher">
-        <a href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/" class="lang-btn active" title="Français">🇫🇷 <span class="lang-label">FR</span></a>
-        <a href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/en.html" class="lang-btn" title="English">🇬🇧 <span class="lang-label">EN</span></a>
-        <a href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/es.html" class="lang-btn" title="Español">🇪🇸 <span class="lang-label">ES</span></a>
-        <a href="https://ucfzem.github.io/ucfzem-blog/articles/automatiser-fiches-produit/ar.html" class="lang-btn" title="العربية">🇲🇦 <span class="lang-label">AR</span></a>
+        <button class="lang-btn active" data-lang="fr" title="Français">🇫🇷 <span class="lang-label">FR</span></button>
+        <button class="lang-btn" data-lang="en" title="English">🇬🇧 <span class="lang-label">EN</span></button>
+        <button class="lang-btn" data-lang="es" title="Español">🇪🇸 <span class="lang-label">ES</span></button>
+        <button class="lang-btn" data-lang="ar" title="العربية">🇲🇦 <span class="lang-label">AR</span></button>
       </div>
       <button class="theme-toggle" id="theme-toggle" title="Toggle theme">🌙</button>
     </div>
   </nav>
 
+  <!-- Main Content -->
   <div class="container">
+    <!-- Table of Contents -->
     <aside>
-      <button class="mobile-toc-toggle" id="toc-toggle">☰ Table des matières</button>
+      <button class="mobile-toc-toggle" id="toc-toggle">☰ <span data-i18n="toc_title">Table des matières</span></button>
       <div class="toc" id="toc">
-        <h3>Table des matières</h3>
-        <ul id="toc-list">
-          <li><a href="#intro">Introduction</a></li>
-            <li><a href="#section1">1. Le Pipeline Technique</a></li>
-            <li><a href="#section2">2. Les Pièges à Éviter</a></li>
-            <li><a href="#section3">3. Passer à la Vitesse Supérieure</a></li>
-            <li><a href="#conclusion">Conclusion</a></li>
-        </ul>
+        <h3 data-i18n="toc_title">Table des matières</h3>
+        <ul id="toc-list"></ul>
       </div>
     </aside>
 
+    <!-- Article -->
     <article class="article">
-      <span class="article-badge">🔄 Mis à jour : Juin 2026</span>
-      <h1 class="article-title">Comment Automatiser la Création de Fiches Produit E-commerce en Combinant Next.js et l'API de ChatGPT</h1>
+      <span class="article-badge" data-i18n="badge">🔄 Mis à jour : Juin 2026</span>
+      <h1 class="article-title" data-i18n="title">Comment Automatiser la Création de Fiches Produit E-commerce en Combinant Next.js et l'API de ChatGPT</h1>
 
       <div class="article-meta">
-        <span>✍️ UcfZem Tech</span>
-        <span>📅 Juin 2026</span>
-        <span>⏱️ 12 min de lecture</span>
+        <span>✍️ <span data-i18n="author">UcfZem Tech</span></span>
+        <span>📅 <span data-i18n="date">Juin 2026</span></span>
+        <span>⏱️ <span data-i18n="reading_time">12 min de lecture</span></span>
       </div>
 
       <div class="share-bar">
-        <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.href).then(() => { const b=this; const o=b.innerHTML; b.innerHTML='✅ Copié!'; setTimeout(()=>b.innerHTML=o,2000); })">🔗 Copier le lien</button>
-        <button class="share-btn" onclick="window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(window.location.href),'_blank')">🐦 Twitter</button>
-        <button class="share-btn" onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(window.location.href),'_blank')">💼 LinkedIn</button>
+        <button class="share-btn" onclick="copyLink()">🔗 <span data-i18n="share_copy">Copier le lien</span></button>
+        <button class="share-btn" onclick="shareTwitter()">🐦 Twitter</button>
+        <button class="share-btn" onclick="shareLinkedIn()">💼 LinkedIn</button>
       </div>
 
-      <div class="article-content">
-        
+      <div class="article-content" id="article-content">
+        <!-- Content injected by JS -->
+      </div>
+
+      <!-- Newsletter -->
+      <div class="newsletter">
+        <h3 data-i18n="newsletter_title">📬 Restez informé</h3>
+        <p data-i18n="newsletter_desc">Recevez nos derniers articles techniques et conseils e-commerce directement dans votre boîte mail.</p>
+        <form class="newsletter-form" id="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+          <input type="email" placeholder="votre@email.com" data-i18n-placeholder="newsletter_placeholder" id="newsletter-email" required>
+          <button type="submit" data-i18n="newsletter_btn">S'abonner</button>
+        </form>
+      </div>
+
+      <!-- Related Articles -->
+      <div class="related">
+        <h3 data-i18n="related_title">📖 Articles connexes</h3>
+        <div class="related-grid" id="related-grid">
+          <!-- Injected by JS -->
+        </div>
+      </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="blog-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">UcfZem Tech</span>
+          <p class="footer-tagline" data-i18n="footer_tagline">Guides techniques, tutors et outils pour développeurs et e-commerçants.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4 data-i18n="footer_nav">Navigation</h4>
+            <a href="https://ucfzem.github.io/" data-i18n="footer_home">Accueil</a>
+            <a href="https://ucfzem.github.io/works/" data-i18n="footer_works">Mes Projets</a>
+            <a href="https://ucfzem.github.io/ucfzem-blog/" data-i18n="footer_blog">Blog</a>
+          </div>
+          <div class="footer-col">
+            <h4 data-i18n="footer_projects">Projets</h4>
+            <a href="https://ucfzem.github.io/guide-freelance/" data-i18n="footer_guide">Guide Freelance</a>
+            <a href="https://elixir-techx.vercel.app/" target="_blank" rel="noopener">ElixirTechx</a>
+            <a href="https://500-prompts-ia.vercel.app/" target="_blank" rel="noopener">500 Prompts IA</a>
+          </div>
+          <div class="footer-col">
+            <h4 data-i18n="footer_contact">Contact</h4>
+            <a href="https://github.com/ucfzem" target="_blank" rel="noopener">GitHub</a>
+            <a href="mailto:azer.tyu199p@gmail.com" data-i18n="footer_email">Email</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p data-i18n="footer_copy">© 2026 UcfZem Tech. Tous droits réservés.</p>
+          <div class="footer-legal">
+            <a href="mailto:azer.tyu199p@gmail.com?subject=Mentions%20l%C3%A9gales" data-i18n="footer_legal">Mentions légales</a>
+            <a href="mailto:azer.tyu199p@gmail.com?subject=CGV" data-i18n="footer_cgv">CGV</a>
+            <a href="mailto:azer.tyu199p@gmail.com?subject=Confidentialit%C3%A9" data-i18n="footer_privacy">Confidentialité</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" title="Back to top">↑</button>
+
+  <script>
+    // ============================================================
+    // I18N TRANSLATIONS
+    // ============================================================
+    const I18N = {
+      fr: {
+        toc_title: "Table des matières",
+        badge: "🔄 Mis à jour : Juin 2026",
+        title: "Comment Automatiser la Création de Fiches Produit E-commerce en Combinant Next.js et l'API de ChatGPT",
+        author: "UcfZem Tech",
+        date: "Juin 2026",
+        reading_time: "12 min de lecture",
+        share_copy: "Copier le lien",
+        newsletter_title: "📬 Restez informé",
+        newsletter_desc: "Recevez nos derniers articles techniques et conseils e-commerce directement dans votre boîte mail.",
+        newsletter_placeholder: "votre@email.com",
+        newsletter_btn: "S'abonner",
+        related_title: "📖 Articles connexes",
+        footer_nav: "Navigation",
+        footer_projects: "Projets",
+        footer_contact: "Contact",
+        footer_home: "Accueil",
+        footer_works: "Mes Projets",
+        footer_blog: "Blog",
+        footer_guide: "Guide Freelance",
+        footer_elixir: "ElixirTechx",
+        footer_prompts: "500 Prompts IA",
+        footer_github: "GitHub",
+        footer_email: "Email",
+        footer_copy: "© 2026 UcfZem Tech. Tous droits réservés.",
+        footer_legal: "Mentions légales",
+        footer_cgv: "CGV",
+        footer_privacy: "Confidentialité",
+        footer_tagline: "Guides techniques, tutors et outils pour développeurs et e-commerçants.",
+        cta_title: "🚀 Prêt à automatiser votre catalogue ?",
+        cta_desc: "UcfZem Tech vous accompagne dans la mise en place de solutions d'automatisation e-commerce sur mesure.",
+        cta_primary: "Démarrer un projet",
+        cta_secondary: "Voir les réalisations",
+        table_mistake: "❌ Erreur Courante",
+        table_solution: "✅ Solution",
+        table_impact: "💡 Impact",
+        table_r1: "Envoyer tout le catalogue d'un coup",
+        table_s1: "Traiter par lots de 10-20 produits",
+        table_i1: "Réduit les timeouts de 90%",
+        table_r2: "Pas de validation des réponses IA",
+        table_s2: "Parser et valider le JSON renvoyé",
+        table_i2: "Élimine 100% des erreurs d'affichage",
+        table_r3: "Clé API exposée côté client",
+        table_s3: "Utiliser exclusivement les API Routes",
+        table_i3: "Sécurité critique",
+        table_r4: "Pas de rate limiting",
+        table_s4: "Implémenter un compteur par IP",
+        table_i4: "Évite les factures surprises",
+        table_r5: "Contenu généré non vérifié",
+        table_s5: "Revue humaine + filtre de modération",
+        table_i5: "Qualité et conformité légale",
+        toc_items: [
+          { id: "intro", text: "Introduction" },
+          { id: "section1", text: "1. Le Pipeline Technique" },
+          { id: "section2", text: "2. Les Pièges à Éviter" },
+          { id: "section3", text: "3. Passer à la Vitesse Supérieure" },
+          { id: "conclusion", text: "Conclusion" }
+        ],
+        content: `
           <h2 id="intro">Introduction : Le Cauchemar des Fiches Produit</h2>
           <p>Vous avez <strong>200 produits</strong> à mettre en ligne. Chaque fiche nécessite un titre optimisé SEO, une description engageante, des spécifications techniques et des méta-descriptions. À la vitesse manuelle, c'est <strong>3 semaines de travail répétitif</strong> — et vos concurrents ont déjà lancé leur catalogue.</p>
           <p>Dans ce guide, nous allons construire un <strong>pipeline d'automatisation complet</strong> qui transforme un simple CSV de produits en fiches e-commerce prêtes à publier, en combinant la puissance de <strong>Next.js</strong> et l'intelligence de <strong>ChatGPT</strong>.</p>
@@ -948,18 +1057,18 @@
   <span class="kw">try</span> {
     <span class="kw">const</span> product: <span class="type">ProductInput</span> = <span class="kw">await</span> request.<span class="fn">json</span>();
 
-    <span class="kw">const</span> prompt = <span class="str">`
+    <span class="kw">const</span> prompt = <span class="str">\`
       Tu es un expert en rédaction e-commerce SEO.
       Génère une fiche produit complète pour :
-      - Nom : ${product.name}
-      - Catégorie : ${product.category}
-      - Prix : ${product.price}€
-      - Marque : ${product.brand || 'Non spécifiée'}
-      - Caractéristiques : ${product.features.join(', ')}
+      - Nom : \${product.name}
+      - Catégorie : \${product.category}
+      - Prix : \${product.price}€
+      - Marque : \${product.brand || 'Non spécifiée'}
+      - Caractéristiques : \${product.features.join(', ')}
 
       Fournis : titre SEO (max 60 car.), méta-description
       (max 155 car.), description complète, et 5 bullet points.
-      `</span>;
+      \`</span>;
 
     <span class="kw">const</span> completion = <span class="kw">await</span> openai.chat.completions.<span class="fn">create</span>({
       model: <span class="str">'gpt-4o'</span>,
@@ -1132,8 +1241,8 @@
             <h3 data-i18n="cta_title">🚀 Prêt à automatiser votre catalogue ?</h3>
             <p data-i18n="cta_desc">UcfZem Tech vous accompagne dans la mise en place de solutions d'automatisation e-commerce sur mesure.</p>
             <div class="cta-buttons">
-              <button class="cta-btn cta-btn-primary" data-i18n="cta_primary">Démarrer un projet</button>
-              <button class="cta-btn cta-btn-secondary" data-i18n="cta_secondary">Voir les réalisations</button>
+              <button class="cta-btn cta-btn-primary" data-i18n="cta_primary" onclick="window.location.href='mailto:azer.tyu199p@gmail.com?subject=Demande%20de%20projet%20-%20Automatisation%20e-commerce'">Démarrer un projet</button>
+              <button class="cta-btn cta-btn-secondary" data-i18n="cta_secondary" onclick="window.open('https://ucfzem.github.io/works/', '_blank')">Voir les réalisations</button>
             </div>
           </div>
 
@@ -1148,102 +1257,1010 @@
             <li>Commencez petit, puis scaliez progressivement</li>
           </ol>
           <p>Vos concurrents passent encore leurs journées à écrire des fiches à la main. Vous, vous pouvez <strong>automatiser tout le processus</strong> et consacrer votre temps à ce qui compte vraiment : vendre.</p>
-        
-      </div>
+        `,
+        related: [
+          { tag: "Next.js", title: "Optimiser le SEO avec Next.js App Router", desc: "Guide complet pour le référencement naturel.", url: "https://ucfzem.github.io/ucfzem-blog/" },
+          { tag: "IA", title: "Intégrer l'IA dans votre workflow e-commerce", desc: "Des chatbots aux descriptions automatiques.", url: "https://ucfzem.github.io/ucfzem-blog/" },
+          { tag: "Performance", title: "Réduire le Time to First Byte de 60%", desc: "Techniques avancées de optimisation serveur.", url: "https://ucfzem.github.io/ucfzem-blog/" }
+        ]
+      },
+      en: {
+        toc_title: "Table of Contents",
+        badge: "🔄 Updated: June 2026",
+        title: "How to Automate E-commerce Product Page Creation with Next.js and the ChatGPT API",
+        author: "UcfZem Tech",
+        date: "June 2026",
+        reading_time: "12 min read",
+        share_copy: "Copy link",
+        newsletter_title: "📬 Stay informed",
+        newsletter_desc: "Get our latest technical articles and e-commerce tips directly in your inbox.",
+        newsletter_placeholder: "your@email.com",
+        newsletter_btn: "Subscribe",
+        related_title: "📖 Related Articles",
+        footer_nav: "Navigation",
+        footer_projects: "Projects",
+        footer_contact: "Contact",
+        footer_home: "Home",
+        footer_works: "My Works",
+        footer_blog: "Blog",
+        footer_guide: "Freelancer Guide",
+        footer_elixir: "ElixirTechx",
+        footer_prompts: "500 Prompts IA",
+        footer_github: "GitHub",
+        footer_email: "Email",
+        footer_copy: "© 2026 UcfZem Tech. All rights reserved.",
+        footer_legal: "Legal",
+        footer_cgv: "Terms",
+        footer_privacy: "Privacy",
+        footer_tagline: "Technical guides, tutorials and tools for developers and e-commerce.",
+        cta_title: "🚀 Ready to automate your catalog?",
+        cta_desc: "UcfZem Tech helps you implement custom e-commerce automation solutions.",
+        cta_primary: "Start a project",
+        cta_secondary: "View our work",
+        table_mistake: "❌ Common Mistake",
+        table_solution: "✅ Solution",
+        table_impact: "💡 Impact",
+        table_r1: "Sending the entire catalog at once",
+        table_s1: "Process in batches of 10-20 products",
+        table_i1: "Reduces timeouts by 90%",
+        table_r2: "No validation of AI responses",
+        table_s2: "Parse and validate the returned JSON",
+        table_i2: "Eliminates 100% of display errors",
+        table_r3: "API key exposed on client side",
+        table_s3: "Use API Routes exclusively",
+        table_i3: "Critical security",
+        table_r4: "No rate limiting",
+        table_s4: "Implement an IP-based counter",
+        table_i4: "Avoids surprise bills",
+        table_r5: "Unverified generated content",
+        table_s5: "Human review + moderation filter",
+        table_i5: "Quality and legal compliance",
+        toc_items: [
+          { id: "intro", text: "Introduction" },
+          { id: "section1", text: "1. The Technical Pipeline" },
+          { id: "section2", text: "2. Pitfalls to Avoid" },
+          { id: "section3", text: "3. Level Up" },
+          { id: "conclusion", text: "Conclusion" }
+        ],
+        content: `
+          <h2 id="intro">Introduction: The Product Page Nightmare</h2>
+          <p>You have <strong>200 products</strong> to list online. Each page needs an SEO-optimized title, engaging description, technical specs, and meta descriptions. At manual speed, that's <strong>3 weeks of repetitive work</strong> — and your competitors have already launched their catalog.</p>
+          <p>In this guide, we'll build a <strong>complete automation pipeline</strong> that transforms a simple CSV of products into publish-ready e-commerce pages, combining the power of <strong>Next.js</strong> with the intelligence of <strong>ChatGPT</strong>.</p>
 
-      <div class="newsletter">
-        <h3>📬 Restez informé</h3>
-        <p>Recevez nos derniers articles techniques et conseils e-commerce directement dans votre boîte mail.</p>
-        <form class="newsletter-form" onsubmit="return false;">
-          <input type="email" placeholder="votre@email.com">
-          <button type="submit">S'abonner</button>
-        </form>
-      </div>
+          <h2 id="section1">Section 1: The Technical Pipeline Step by Step</h2>
+          <h3>1.1 Overall Architecture</h3>
+          <p>Our solution rests on three pillars:</p>
+          <ul>
+            <li><strong>A structured CSV</strong> containing your raw product data</li>
+            <li><strong>A Next.js API Route</strong> that orchestrates the OpenAI call</li>
+            <li><strong>A React component</strong> that displays and manages real-time generation</li>
+          </ul>
 
-      <div class="related">
-        <h3>📖 Articles connexes</h3>
-        <div class="related-grid">
-          <div class="related-card">
-      <span class="related-card-tag">Next.js</span>
-      <h4>Optimiser le SEO avec Next.js App Router</h4>
-      <p>Guide complet pour le référencement naturel.</p>
-    </div>
-          <div class="related-card">
-      <span class="related-card-tag">IA</span>
-      <h4>Intégrer l'IA dans votre workflow e-commerce</h4>
-      <p>Des chatbots aux descriptions automatiques.</p>
-    </div>
-          <div class="related-card">
-      <span class="related-card-tag">Performance</span>
-      <h4>Réduire le Time to First Byte de 60%</h4>
-      <p>Techniques avancées de optimisation serveur.</p>
-    </div>
-        </div>
-      </div>
-    </article>
+          <h3>1.2 The Next.js API Route</h3>
+          <p>This is the heart of our system. Here's the endpoint that receives product data and returns generated content:</p>
 
-    <footer class="blog-footer">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <span class="footer-logo">UcfZem Tech</span>
-          <p class="footer-tagline">Guides techniques, tutors et outils pour développeurs et e-commerçants.</p>
-        </div>
-        <div class="footer-links">
-          <div class="footer-col">
-            <h4>Navigation</h4>
-            <a href="https://ucfzem.github.io/">Accueil</a>
-            <a href="https://ucfzem.github.io/works/">Mes Projets</a>
-            <a href="https://ucfzem.github.io/ucfzem-blog/">Blog</a>
+          <pre><code><span class="code-lang">TypeScript</span>
+<span class="cm">// app/api/generate-product/route.ts</span>
+<span class="kw">import</span> { NextRequest, NextResponse } <span class="kw">from</span> <span class="str">'next/server'</span>;
+<span class="kw">import</span> OpenAI <span class="kw">from</span> <span class="str">'openai'</span>;
+
+<span class="kw">const</span> openai = <span class="kw">new</span> <span class="fn">OpenAI</span>({
+  apiKey: process.env.<span class="prop">OPENAI_API_KEY</span>,
+});
+
+<span class="kw">interface</span> <span class="type">ProductInput</span> {
+  name: <span class="type">string</span>;
+  category: <span class="type">string</span>;
+  price: <span class="type">number</span>;
+  features: <span class="type">string</span>[];
+  brand?: <span class="type">string</span>;
+}
+
+<span class="kw">export async function</span> <span class="fn">POST</span>(request: <span class="type">NextRequest</span>) {
+  <span class="kw">try</span> {
+    <span class="kw">const</span> product: <span class="type">ProductInput</span> = <span class="kw">await</span> request.<span class="fn">json</span>();
+
+    <span class="kw">const</span> prompt = <span class="str">\`
+      You are an expert e-commerce SEO copywriter.
+      Generate a complete product page for:
+      - Name: \${product.name}
+      - Category: \${product.category}
+      - Price: \${product.price}€
+      - Brand: \${product.brand || 'Not specified'}
+      - Features: \${product.features.join(', ')}
+
+      Provide: SEO title (max 60 chars), meta description
+      (max 155 chars), full description, and 5 bullet points.
+      \`</span>;
+
+    <span class="kw">const</span> completion = <span class="kw">await</span> openai.chat.completions.<span class="fn">create</span>({
+      model: <span class="str">'gpt-4o'</span>,
+      messages: [{ role: <span class="str">'user'</span>, content: prompt }],
+      temperature: <span class="num">0.7</span>,
+      max_tokens: <span class="num">1500</span>,
+    });
+
+    <span class="kw">const</span> generatedContent = completion.choices[<span class="num">0</span>].message?.content;
+
+    <span class="kw">return</span> NextResponse.<span class="fn">json</span>({
+      success: <span class="num">true</span>,
+      content: generatedContent,
+      usage: completion.usage,
+    });
+  } <span class="kw">catch</span> (error) {
+    <span class="kw">return</span> NextResponse.<span class="fn">json</span>(
+      { success: <span class="num">false</span>, error: <span class="str">'Generation error'</span> },
+      { status: <span class="num">500</span> }
+    );
+  }
+}</code></pre>
+
+          <h3>1.3 The React Frontend Component</h3>
+          <p>A clean component that handles submission and result display:</p>
+
+          <pre><code><span class="code-lang">TypeScript</span>
+<span class="cm">// components/ProductGenerator.tsx</span>
+<span class="str">'use client'</span>;
+<span class="kw">import</span> { useState } <span class="kw">from</span> <span class="str">'react'</span>;
+
+<span class="kw">export default function</span> <span class="fn">ProductGenerator</span>() {
+  <span class="kw">const</span> [loading, setLoading] = <span class="fn">useState</span>(<span class="num">false</span>);
+  <span class="kw">const</span> [result, setResult] = <span class="fn">useState</span>(<span class="str">''</span>);
+  <span class="kw">const</span> [form, setForm] = <span class="fn">useState</span>({
+    name: <span class="str">''</span>, category: <span class="str">''</span>,
+    price: <span class="num">0</span>, features: <span class="str">''</span>,
+  });
+
+  <span class="kw">const</span> <span class="fn">handleSubmit</span> = <span class="kw">async</span> (e: React.FormEvent) =&gt; {
+    e.<span class="fn">preventDefault</span>();
+    <span class="fn">setLoading</span>(<span class="num">true</span>);
+
+    <span class="kw">const</span> res = <span class="kw">await</span> <span class="fn">fetch</span>(<span class="str">'/api/generate-product'</span>, {
+      method: <span class="str">'POST'</span>,
+      headers: { <span class="str">'Content-Type'</span>: <span class="str">'application/json'</span> },
+      body: JSON.<span class="fn">stringify</span>({
+        ...form,
+        price: <span class="fn">Number</span>(form.price),
+        features: form.features.<span class="fn">split</span>(<span class="str">','</span>).<span class="fn">map</span>(f =&gt; f.<span class="fn">trim</span>()),
+      }),
+    });
+
+    <span class="kw">const</span> data = <span class="kw">await</span> res.<span class="fn">json</span>();
+    <span class="fn">setResult</span>(data.content);
+    <span class="fn">setLoading</span>(<span class="num">false</span>);
+  };
+
+  <span class="kw">return</span> (
+    &lt;<span class="tag">div</span> <span class="attr">className</span>=<span class="val">"generator-card"</span>&gt;
+      &lt;<span class="tag">h2</span>&gt;Product Page Generator&lt;/<span class="tag">h2</span>&gt;
+      &lt;<span class="tag">form</span> <span class="attr">onSubmit</span>={handleSubmit}&gt;
+        &lt;<span class="tag">input</span> <span class="attr">placeholder</span>=<span class="val">"Product name"</span>
+          <span class="attr">onChange</span>={e =&gt; <span class="fn">setForm</span>({...form, name: e.target.value})} /&gt;
+        &lt;<span class="tag">input</span> <span class="attr">placeholder</span>=<span class="val">"Category"</span>
+          <span class="attr">onChange</span>={e =&gt; <span class="fn">setForm</span>({...form, category: e.target.value})} /&gt;
+        &lt;<span class="tag">input</span> <span class="attr">type</span>=<span class="val">"number"</span> <span class="attr">placeholder</span>=<span class="val">"Price"</span>
+          <span class="attr">onChange</span>={e =&gt; <span class="fn">setForm</span>({...form, price: e.target.value})} /&gt;
+        &lt;<span class="tag">textarea</span> <span class="attr">placeholder</span>=<span class="val">"Features (comma separated)"</span>
+          <span class="attr">onChange</span>={e =&gt; <span class="fn">setForm</span>({...form, features: e.target.value})} /&gt;
+        &lt;<span class="tag">button</span> <span class="attr">type</span>=<span class="val">"submit"</span> <span class="attr">disabled</span>={loading}&gt;
+          {loading ? <span class="str">'Generating...'</span> : <span class="str">'Generate page'</span>}
+        &lt;/<span class="tag">button</span>&gt;
+      &lt;/<span class="tag">form</span>&gt;
+      {result &amp;&amp; (
+        &lt;<span class="tag">div</span> <span class="attr">className</span>=<span class="val">"result"</span>
+          <span class="attr">dangerouslySetInnerHTML</span>={{ __html: result }} /&gt;
+      )}
+    &lt;/<span class="tag">div</span>&gt;
+  );
+}</code></pre>
+
+          <h3>1.4 The .env.local File</h3>
+          <p>Never expose your API keys on the client side:</p>
+
+          <pre><code><span class="code-lang">env</span>
+<span class="cm"># .env.local</span>
+<span class="prop">OPENAI_API_KEY</span>=<span class="str">sk-your-api-key-here</span>
+<span class="prop">NEXT_PUBLIC_SITE_URL</span>=<span class="str">https://your-site.com</span>
+<span class="prop">RATE_LIMIT_MAX</span>=<span class="num">50</span>
+<span class="prop">RATE_LIMIT_WINDOW</span>=<span class="num">60000</span></code></pre>
+
+          <h3>1.5 The Rate Limiter</h3>
+          <p>Protect your endpoint against abuse:</p>
+
+          <pre><code><span class="code-lang">TypeScript</span>
+<span class="cm">// lib/rate-limiter.ts</span>
+<span class="kw">const</span> requests = <span class="kw">new</span> <span class="fn">Map</span>&lt;<span class="type">string</span>, <span class="type">number</span>[]&gt;();
+
+<span class="kw">export function</span> <span class="fn">rateLimit</span>(
+  ip: <span class="type">string</span>,
+  maxRequests = <span class="num">50</span>,
+  windowMs = <span class="num">60000</span>
+): <span class="type">boolean</span> {
+  <span class="kw">const</span> now = Date.<span class="fn">now</span>();
+  <span class="kw">const</span> timestamps = requests.<span class="fn">get</span>(ip) || [];
+  <span class="kw">const</span> valid = timestamps.<span class="fn">filter</span>(t =&gt; now - t &lt; windowMs);
+
+  <span class="kw">if</span> (valid.length &gt;= maxRequests) <span class="kw">return false</span>;
+
+  valid.<span class="fn">push</span>(now);
+  requests.<span class="fn">set</span>(ip, valid);
+  <span class="kw">return true</span>;
+}</code></pre>
+
+          <h2 id="section2">Section 2: Pitfalls to Avoid and Best Practices</h2>
+          <p>Here are the most common mistakes and how to overcome them:</p>
+
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th data-i18n="table_mistake">❌ Common Mistake</th>
+                <th data-i18n="table_solution">✅ Solution</th>
+                <th data-i18n="table_impact">💡 Impact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-i18n="table_r1">Sending the entire catalog at once</td>
+                <td data-i18n="table_s1">Process in batches of 10-20 products</td>
+                <td data-i18n="table_i1">Reduces timeouts by 90%</td>
+              </tr>
+              <tr>
+                <td data-i18n="table_r2">No validation of AI responses</td>
+                <td data-i18n="table_s2">Parse and validate the returned JSON</td>
+                <td data-i18n="table_i2">Eliminates 100% of display errors</td>
+              </tr>
+              <tr>
+                <td data-i18n="table_r3">API key exposed on client side</td>
+                <td data-i18n="table_s3">Use API Routes exclusively</td>
+                <td data-i18n="table_i3">Critical security</td>
+              </tr>
+              <tr>
+                <td data-i18n="table_r4">No rate limiting</td>
+                <td data-i18n="table_s4">Implement an IP-based counter</td>
+                <td data-i18n="table_i4">Avoids surprise bills</td>
+              </tr>
+              <tr>
+                <td data-i18n="table_r5">Unverified generated content</td>
+                <td data-i18n="table_s5">Human review + moderation filter</td>
+                <td data-i18n="table_i5">Quality and legal compliance</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><strong>Pitfall #1</strong>: sending raw prompts without structure. ChatGPT returns unstructured text. Solution: enforce a <strong>strict JSON format</strong> in your prompt and parse the response.</p>
+
+          <p><strong>Pitfall #2</strong>: ignoring tokens. Each GPT-4o call costs tokens. For 1000 products, it adds up fast. <strong>Tip</strong>: use GPT-4o-mini for simple descriptions and GPT-4o only for critical content.</p>
+
+          <h2 id="section3">Section 3: Level Up with UcfZem Tech</h2>
+          <p>The code above is an excellent starting point, but for large-scale production, you need:</p>
+          <ul>
+            <li><strong>Real-time monitoring</strong> — know how many products were generated, error rates, latencies</li>
+            <li><strong>Smart caching</strong> — never regenerate an identical product</li>
+            <li><strong>CMS integration</strong> — automatically push pages to Shopify, WooCommerce or your CMS</li>
+            <li><strong>Multi-language</strong> — generate pages in French, English, Spanish and Arabic automatically</li>
+          </ul>
+
+          <div class="cta-section">
+            <h3 data-i18n="cta_title">🚀 Ready to automate your catalog?</h3>
+            <p data-i18n="cta_desc">UcfZem Tech helps you implement custom e-commerce automation solutions.</p>
+            <div class="cta-buttons">
+              <button class="cta-btn cta-btn-primary" data-i18n="cta_primary" onclick="window.location.href='mailto:azer.tyu199p@gmail.com?subject=Project%20request%20-%20E-commerce%20automation'">Start a project</button>
+              <button class="cta-btn cta-btn-secondary" data-i18n="cta_secondary" onclick="window.open('https://ucfzem.github.io/works/', '_blank')">View our work</button>
+            </div>
           </div>
-          <div class="footer-col">
-            <h4>Projets</h4>
-            <a href="https://ucfzem.github.io/guide-freelance/">Guide Freelance</a>
-            <a href="https://elixir-techx.vercel.app/">ElixirTechx</a>
-            <a href="https://500-prompts-ia.vercel.app/">500 Prompts IA</a>
-          </div>
-          <div class="footer-col">
-            <h4>Contact</h4>
-            <a href="https://github.com/ucfzem">GitHub</a>
-            <a href="mailto:azer.tyu199p@gmail.com">Email</a>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>© 2026 UcfZem Tech. Tous droits réservés.</p>
-          <div class="footer-legal">
-            <a href="#">Mentions légales</a>
-            <a href="#">CGV</a>
-            <a href="#">Confidentialité</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </div>
 
-  <button id="back-to-top" title="Back to top">↑</button>
+          <h2 id="conclusion">Conclusion: From Automation to Domination</h2>
+          <p>Product page automation isn't a luxury — it's a <strong>vital competitive advantage</strong>. With Next.js and ChatGPT, you have a fast, secure, and scalable pipeline.</p>
+          <p>Key steps to remember:</p>
+          <ol>
+            <li>Structure your product data in a clean CSV</li>
+            <li>Build a robust Next.js API Route with rate limiting</li>
+            <li>Always validate AI responses before insertion</li>
+            <li>Implement a cache to optimize API costs</li>
+            <li>Start small, then scale progressively</li>
+          </ol>
+          <p>Your competitors still spend their days writing product pages manually. You can <strong>automate the entire process</strong> and dedicate your time to what really matters: selling.</p>
+        `,
+        related: [
+          { tag: "Next.js", title: "Optimizing SEO with Next.js App Router", desc: "Complete guide for natural referencing.", url: "https://ucfzem.github.io/ucfzem-blog/" },
+          { tag: "AI", title: "Integrating AI into your e-commerce workflow", desc: "From chatbots to automatic descriptions.", url: "https://ucfzem.github.io/ucfzem-blog/" },
+          { tag: "Performance", title: "Reducing Time to First Byte by 60%", desc: "Advanced server optimization techniques.", url: "https://ucfzem.github.io/ucfzem-blog/" }
+        ]
+      },
+      es: {
+        toc_title: "Tabla de Contenidos",
+        badge: "🔄 Actualizado: Junio 2026",
+        title: "Cómo Automatizar la Creación de Fichas de Producto E-commerce con Next.js y la API de ChatGPT",
+        author: "UcfZem Tech",
+        date: "Junio 2026",
+        reading_time: "12 min de lectura",
+        share_copy: "Copiar enlace",
+        newsletter_title: "📬 Mantente informado",
+        newsletter_desc: "Recibe nuestros últimos artículos técnicos y consejos e-commerce directamente en tu bandeja de entrada.",
+        newsletter_placeholder: "tu@email.com",
+        newsletter_btn: "Suscribirse",
+        related_title: "📖 Artículos Relacionados",
+        footer_nav: "Navegación",
+        footer_projects: "Proyectos",
+        footer_contact: "Contacto",
+        footer_home: "Inicio",
+        footer_works: "Mis Proyectos",
+        footer_blog: "Blog",
+        footer_guide: "Guía Freelance",
+        footer_elixir: "ElixirTechx",
+        footer_prompts: "500 Prompts IA",
+        footer_github: "GitHub",
+        footer_email: "Email",
+        footer_copy: "© 2026 UcfZem Tech. Todos los derechos reservados.",
+        footer_legal: "Aviso legal",
+        footer_cgv: "Términos",
+        footer_privacy: "Privacidad",
+        footer_tagline: "Guías técnicos, tutoriales y herramientas para desarrolladores y e-commerce.",
+        cta_title: "🚀 ¿Listo para automatizar tu catálogo?",
+        cta_desc: "UcfZem Tech te acompaña en la implementación de soluciones de automatización e-commerce a medida.",
+        cta_primary: "Empezar un proyecto",
+        cta_secondary: "Ver realizaciones",
+        table_mistake: "❌ Error Común",
+        table_solution: "✅ Solución",
+        table_impact: "💡 Impacto",
+        table_r1: "Enviar todo el catálogo de golpe",
+        table_s1: "Procesar en lotes de 10-20 productos",
+        table_i1: "Reduce los timeouts en un 90%",
+        table_r2: "Sin validación de respuestas IA",
+        table_s2: "Parsear y validar el JSON devuelto",
+        table_i2: "Elimina el 100% de errores de visualización",
+        table_r3: "Clave API expuesta en el cliente",
+        table_s3: "Usar exclusivamente API Routes",
+        table_i3: "Seguridad crítica",
+        table_r4: "Sin rate limiting",
+        table_s4: "Implementar un contador por IP",
+        table_i4: "Evita facturas sorpresa",
+        table_r5: "Contenido generado sin verificar",
+        table_s5: "Revisión humana + filtro de moderación",
+        table_i5: "Calidad y cumplimiento legal",
+        toc_items: [
+          { id: "intro", text: "Introducción" },
+          { id: "section1", text: "1. El Pipeline Técnico" },
+          { id: "section2", text: "2. Errores a Evitar" },
+          { id: "section3", text: "3. Lleva tu Negocio al Siguiente Nivel" },
+          { id: "conclusion", text: "Conclusión" }
+        ],
+        content: `
+          <h2 id="intro">Introducción: La Pesadilla de las Fichas de Producto</h2>
+          <p>Tienes <strong>200 productos</strong> para poner en línea. Cada ficha necesita un título optimizado para SEO, una descripción atractiva, especificaciones técnicas y meta-descripciones. A velocidad manual, son <strong>3 semanas de trabajo repetitivo</strong> — y tus competidores ya han lanzado su catálogo.</p>
+          <p>En esta guía, construiremos un <strong>pipeline de automatización completo</strong> que transforma un simple CSV de productos en fichas e-commerce listas para publicar, combinando el poder de <strong>Next.js</strong> con la inteligencia de <strong>ChatGPT</strong>.</p>
 
-  <script>
-    // Theme toggle
-    const themeToggle = document.getElementById('theme-toggle');
+          <h2 id="section1">Section 1: El Pipeline Técnico Paso a Paso</h2>
+          <h3>1.1 Arquitectura General</h3>
+          <p>Nuestra solución se basa en tres pilares:</p>
+          <ul>
+            <li><strong>Un CSV estructurado</strong> con los datos brutos de tus productos</li>
+            <li><strong>Una API Route de Next.js</strong> que orquesta la llamada a OpenAI</li>
+            <li><strong>Un componente React</strong> que muestra y gestiona la generación en tiempo real</li>
+          </ul>
+
+          <h3>1.2 La API Route de Next.js</h3>
+          <p>Este es el corazón de nuestro sistema. Aquí está el endpoint que recibe los datos del producto y devuelve el contenido generado:</p>
+
+          <pre><code><span class="code-lang">TypeScript</span>
+<span class="cm">// app/api/generate-product/route.ts</span>
+<span class="kw">import</span> { NextRequest, NextResponse } <span class="kw">from</span> <span class="str">'next/server'</span>;
+<span class="kw">import</span> OpenAI <span class="kw">from</span> <span class="str">'openai'</span>;
+
+<span class="kw">const</span> openai = <span class="kw">new</span> <span class="fn">OpenAI</span>({
+  apiKey: process.env.<span class="prop">OPENAI_API_KEY</span>,
+});
+
+<span class="kw">interface</span> <span class="type">ProductInput</span> {
+  name: <span class="type">string</span>;
+  category: <span class="type">string</span>;
+  price: <span class="type">number</span>;
+  features: <span class="type">string</span>[];
+  brand?: <span class="type">string</span>;
+}
+
+<span class="kw">export async function</span> <span class="fn">POST</span>(request: <span class="type">NextRequest</span>) {
+  <span class="kw">try</span> {
+    <span class="kw">const</span> product: <span class="type">ProductInput</span> = <span class="kw">await</span> request.<span class="fn">json</span>();
+
+    <span class="kw">const</span> prompt = <span class="str">\`
+      Eres un experto en redacción e-commerce SEO.
+      Genera una ficha de producto completa para:
+      - Nombre: \${product.name}
+      - Categoría: \${product.category}
+      - Precio: \${product.price}€
+      - Marca: \${product.brand || 'No especificada'}
+      - Características: \${product.features.join(', ')}
+
+      Proporciona: título SEO (máx. 60 car.), meta-descripción
+      (máx. 155 car.), descripción completa y 5 viñetas.
+      \`</span>;
+
+    <span class="kw">const</span> completion = <span class="kw">await</span> openai.chat.completions.<span class="fn">create</span>({
+      model: <span class="str">'gpt-4o'</span>,
+      messages: [{ role: <span class="str">'user'</span>, content: prompt }],
+      temperature: <span class="num">0.7</span>,
+      max_tokens: <span class="num">1500</span>,
+    });
+
+    <span class="kw">const</span> generatedContent = completion.choices[<span class="num">0</span>].message?.content;
+
+    <span class="kw">return</span> NextResponse.<span class="fn">json</span>({
+      success: <span class="num">true</span>,
+      content: generatedContent,
+      usage: completion.usage,
+    });
+  } <span class="kw">catch</span> (error) {
+    <span class="kw">return</span> NextResponse.<span class="fn">json</span>(
+      { success: <span class="num">false</span>, error: <span class="str">'Error de generación'</span> },
+      { status: <span class="num">500</span> }
+    );
+  }
+}</code></pre>
+
+          <h3>1.3 El Componente Frontend React</h3>
+          <p>Un componente limpio que maneja el envío y la visualización del resultado:</p>
+
+          <pre><code><span class="code-lang">TypeScript</span>
+<span class="cm">// components/ProductGenerator.tsx</span>
+<span class="str">'use client'</span>;
+<span class="kw">import</span> { useState } <span class="kw">from</span> <span class="str">'react'</span>;
+
+<span class="kw">export default function</span> <span class="fn">ProductGenerator</span>() {
+  <span class="kw">const</span> [loading, setLoading] = <span class="fn">useState</span>(<span class="num">false</span>);
+  <span class="kw">const</span> [result, setResult] = <span class="fn">useState</span>(<span class="str">''</span>);
+  <span class="kw">const</span> [form, setForm] = <span class="fn">useState</span>({
+    name: <span class="str">''</span>, category: <span class="str">''</span>,
+    price: <span class="num">0</span>, features: <span class="str">''</span>,
+  });
+
+  <span class="kw">const</span> <span class="fn">handleSubmit</span> = <span class="kw">async</span> (e: React.FormEvent) =&gt; {
+    e.<span class="fn">preventDefault</span>();
+    <span class="fn">setLoading</span>(<span class="num">true</span>);
+
+    <span class="kw">const</span> res = <span class="kw">await</span> <span class="fn">fetch</span>(<span class="str">'/api/generate-product'</span>, {
+      method: <span class="str">'POST'</span>,
+      headers: { <span class="str">'Content-Type'</span>: <span class="str">'application/json'</span> },
+      body: JSON.<span class="fn">stringify</span>({
+        ...form,
+        price: <span class="fn">Number</span>(form.price),
+        features: form.features.<span class="fn">split</span>(<span class="str">','</span>).<span class="fn">map</span>(f =&gt; f.<span class="fn">trim</span>()),
+      }),
+    });
+
+    <span class="kw">const</span> data = <span class="kw">await</span> res.<span class="fn">json</span>();
+    <span class="fn">setResult</span>(data.content);
+    <span class="fn">setLoading</span>(<span class="num">false</span>);
+  };
+
+  <span class="kw">return</span> (
+    &lt;<span class="tag">div</span> <span class="attr">className</span>=<span class="val">"generator-card"</span>&gt;
+      &lt;<span class="tag">h2</span>&gt;Generador de Fichas de Producto&lt;/<span class="tag">h2</span>&gt;
+      &lt;<span class="tag">form</span> <span class="attr">onSubmit</span>={handleSubmit}&gt;
+        &lt;<span class="tag">input</span> <span class="attr">placeholder</span>=<span class="val">"Nombre del producto"</span>
+          <span class="attr">onChange</span>={e =&gt; <span class="fn">setForm</span>({...form, name: e.target.value})} /&gt;
+        &lt;<span class="tag">input</span> <span class="attr">placeholder</span>=<span class="val">"Categoría"</span>
+          <span class="attr">onChange</span>={e =&gt; <span class="fn">setForm</span>({...form, category: e.target.value})} /&gt;
+        &lt;<span class="tag">input</span> <span class="attr">type</span>=<span class="val">"number"</span> <span class="attr">placeholder</span>=<span class="val">"Precio"</span>
+          <span class="attr">onChange</span>={e =&gt; <span class="fn">setForm</span>({...form, price: e.target.value})} /&gt;
+        &lt;<span class="tag">textarea</span> <span class="attr">placeholder</span>=<span class="val">"Características (separadas por coma)"</span>
+          <span class="attr">onChange</span>={e =&gt; <span class="fn">setForm</span>({...form, features: e.target.value})} /&gt;
+        &lt;<span class="tag">button</span> <span class="attr">type</span>=<span class="val">"submit"</span> <span class="attr">disabled</span>={loading}&gt;
+          {loading ? <span class="str">'Generando...'</span> : <span class="str">'Generar ficha'</span>}
+        &lt;/<span class="tag">button</span>&gt;
+      &lt;/<span class="tag">form</span>&gt;
+      {result &amp;&amp; (
+        &lt;<span class="tag">div</span> <span class="attr">className</span>=<span class="val">"result"</span>
+          <span class="attr">dangerouslySetInnerHTML</span>={{ __html: result }} /&gt;
+      )}
+    &lt;/<span class="tag">div</span>&gt;
+  );
+}</code></pre>
+
+          <h3>1.4 El Archivo .env.local</h3>
+          <p>Nunca expongas tus claves API del lado del cliente:</p>
+
+          <pre><code><span class="code-lang">env</span>
+<span class="cm"># .env.local</span>
+<span class="prop">OPENAI_API_KEY</span>=<span class="str">sk-tu-clave-api-aqui</span>
+<span class="prop">NEXT_PUBLIC_SITE_URL</span>=<span class="str">https://tu-sitio.com</span>
+<span class="prop">RATE_LIMIT_MAX</span>=<span class="num">50</span>
+<span class="prop">RATE_LIMIT_WINDOW</span>=<span class="num">60000</span></code></pre>
+
+          <h3>1.5 El Rate Limiter</h3>
+          <p>Protege tu endpoint contra abusos:</p>
+
+          <pre><code><span class="code-lang">TypeScript</span>
+<span class="cm">// lib/rate-limiter.ts</span>
+<span class="kw">const</span> requests = <span class="kw">new</span> <span class="fn">Map</span>&lt;<span class="type">string</span>, <span class="type">number</span>[]&gt;();
+
+<span class="kw">export function</span> <span class="fn">rateLimit</span>(
+  ip: <span class="type">string</span>,
+  maxRequests = <span class="num">50</span>,
+  windowMs = <span class="num">60000</span>
+): <span class="type">boolean</span> {
+  <span class="kw">const</span> now = Date.<span class="fn">now</span>();
+  <span class="kw">const</span> timestamps = requests.<span class="fn">get</span>(ip) || [];
+  <span class="kw">const</span> valid = timestamps.<span class="fn">filter</span>(t =&gt; now - t &lt; windowMs);
+
+  <span class="kw">if</span> (valid.length &gt;= maxRequests) <span class="kw">return false</span>;
+
+  valid.<span class="fn">push</span>(now);
+  requests.<span class="fn">set</span>(ip, valid);
+  <span class="kw">return true</span>;
+}</code></pre>
+
+          <h2 id="section2">Section 2: Errores a Evitar y Buenas Prácticas</h2>
+          <p>Estos son los errores más frecuentes y cómo superarlos:</p>
+
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th data-i18n="table_mistake">❌ Error Común</th>
+                <th data-i18n="table_solution">✅ Solución</th>
+                <th data-i18n="table_impact">💡 Impacto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-i18n="table_r1">Enviar todo el catálogo de golpe</td>
+                <td data-i18n="table_s1">Procesar en lotes de 10-20 productos</td>
+                <td data-i18n="table_i1">Reduce los timeouts en un 90%</td>
+              </tr>
+              <tr>
+                <td data-i18n="table_r2">Sin validación de respuestas IA</td>
+                <td data-i18n="table_s2">Parsear y validar el JSON devuelto</td>
+                <td data-i18n="table_i2">Elimina el 100% de errores de visualización</td>
+              </tr>
+              <tr>
+                <td data-i18n="table_r3">Clave API expuesta en el cliente</td>
+                <td data-i18n="table_s3">Usar exclusivamente API Routes</td>
+                <td data-i18n="table_i3">Seguridad crítica</td>
+              </tr>
+              <tr>
+                <td data-i18n="table_r4">Sin rate limiting</td>
+                <td data-i18n="table_s4">Implementar un contador por IP</td>
+                <td data-i18n="table_i4">Evita facturas sorpresa</td>
+              </tr>
+              <tr>
+                <td data-i18n="table_r5">Contenido generado sin verificar</td>
+                <td data-i18n="table_s5">Revisión humana + filtro de moderación</td>
+                <td data-i18n="table_i5">Calidad y cumplimiento legal</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><strong>Error #1</strong>: enviar prompts sin estructura. ChatGPT devuelve texto sin estructurar. Solución: imponer un <strong>formato JSON estricto</strong> en tu prompt y parsear la respuesta.</p>
+
+          <p><strong>Error #2</strong>: ignorar los tokens. Cada llamada a GPT-4o cuesta en tokens. Para 1000 productos, rápidamente aumenta. <strong>Consejo</strong>: usa GPT-4o-mini para descripciones simples y GPT-4o solo para contenido crítico.</p>
+
+          <h2 id="section3">Section 3: Lleva tu Negocio al Siguiente Nivel con UcfZem Tech</h2>
+          <p>El código anterior es un excelente punto de partida, pero para producción a gran escala necesitas:</p>
+          <ul>
+            <li><strong>Monitoreo en tiempo real</strong> — saber cuántos productos se generaron, tasas de error, latencias</li>
+            <li><strong>Caché inteligente</strong> — nunca regenerar un producto idéntico dos veces</li>
+            <li><strong>Integración CMS</strong> — enviar automáticamente las fichas a Shopify, WooCommerce o tu CMS</li>
+            <li><strong>Multi-idioma</strong> — generar fichas en francés, inglés, español y árabe automáticamente</li>
+          </ul>
+
+          <div class="cta-section">
+            <h3 data-i18n="cta_title">🚀 ¿Listo para automatizar tu catálogo?</h3>
+            <p data-i18n="cta_desc">UcfZem Tech te acompaña en la implementación de soluciones de automatización e-commerce a medida.</p>
+            <div class="cta-buttons">
+              <button class="cta-btn cta-btn-primary" data-i18n="cta_primary" onclick="window.location.href='mailto:azer.tyu199p@gmail.com?subject=Solicitud%20de%20proyecto%20-%20Automatizaci%C3%B3n%20e-commerce'">Empezar un proyecto</button>
+              <button class="cta-btn cta-btn-secondary" data-i18n="cta_secondary" onclick="window.open('https://ucfzem.github.io/works/', '_blank')">Ver realizaciones</button>
+            </div>
+          </div>
+
+          <h2 id="conclusion">Conclusión: De la Automatización a la Dominación</h2>
+          <p>La automatización de fichas de producto no es un lujo — es una <strong>ventaja competitiva vital</strong>. Con Next.js y ChatGPT, tienes un pipeline rápido, seguro y escalable.</p>
+          <p>Los pasos clave a recordar:</p>
+          <ol>
+            <li>Estructura los datos de tus productos en un CSV limpio</li>
+            <li>Construye una API Route de Next.js robusta con rate limiting</li>
+            <li>Siempre valida las respuestas de la IA antes de insertar</li>
+            <li>Implementa una caché para optimizar los costes de API</li>
+            <li>Empieza pequeño, luego escala progresivamente</li>
+          </ol>
+          <p>Tus competidores aún pasan sus días escribiendo fichas a mano. Tú puedes <strong>automatizar todo el proceso</strong> y dedicar tu tiempo a lo que realmente importa: vender.</p>
+        `,
+        related: [
+          { tag: "Next.js", title: "Optimizar el SEO con Next.js App Router", desc: "Guía completa para el posicionamiento natural.", url: "https://ucfzem.github.io/ucfzem-blog/" },
+          { tag: "IA", title: "Integrar la IA en tu flujo de trabajo e-commerce", desc: "De chatbots a descripciones automáticas.", url: "https://ucfzem.github.io/ucfzem-blog/" },
+          { tag: "Rendimiento", title: "Reducir el Time to First Byte en un 60%", desc: "Técnicas avanzadas de optimización de servidor.", url: "https://ucfzem.github.io/ucfzem-blog/" }
+        ]
+      },
+      ar: {
+        toc_title: "جدول المحتويات",
+        badge: "🔄 تم التحديث: يونيو 2026",
+        title: "كيفية أتمتة إنشاء صفحات المنتجات الإلكترونية باستخدام Next.js و ChatGPT API",
+        author: "UcfZem Tech",
+        date: "يونيو 2026",
+        reading_time: "12 دقيقة قراءة",
+        share_copy: "نسخ الرابط",
+        newsletter_title: "📬 ابقَ على اطلاع",
+        newsletter_desc: "احصل على أحدث مقالاتنا التقنية ونصائح التجارة الإلكترونية مباشرة في بريدك الإلكتروني.",
+        newsletter_placeholder: "بريدك@البريد.com",
+        newsletter_btn: "اشتراك",
+        related_title: "📖 مقالات ذات صلة",
+        footer_nav: "التنقل",
+        footer_projects: "المشاريع",
+        footer_contact: "اتصل بنا",
+        footer_home: "الرئيسية",
+        footer_works: "أعمالي",
+        footer_blog: "المدونة",
+        footer_guide: "دليل المستقلين",
+        footer_elixir: "ElixirTechx",
+        footer_prompts: "500 Prompts IA",
+        footer_github: "GitHub",
+        footer_email: "البريد الإلكتروني",
+        footer_copy: "© 2026 UcfZem Tech. جميع الحقوق محفوظة.",
+        footer_legal: "الإشعارات القانونية",
+        footer_cgv: "الشروط",
+        footer_privacy: "الخصوصية",
+        footer_tagline: "أدلة تقنية ودروس وأدوات للمطورين والتجارة الإلكترونية.",
+        cta_title: "🚀 هل أنت مستعد لأتمتة كتالوجك؟",
+        cta_desc: "UcfZem Tech يرافقك في تنفيذ حلول أتمتة التجارة الإلكترونية المخصصة.",
+        cta_primary: "بدء مشروع",
+        cta_secondary: "عرض الأعمال",
+        table_mistake: "❌ خطأ شائع",
+        table_solution: "✅ الحل",
+        table_impact: "💡 التأثير",
+        table_r1: "إرسال الكتالوج بالكامل دفعة واحدة",
+        table_s1: "المعالجة على دفعات من 10-20 منتج",
+        table_i1: "يقلل أوقات الانتظار بنسبة 90%",
+        table_r2: "لا تحقق من استجابات الذكاء الاصطناعي",
+        table_s2: "تحليل JSON المرتجع والتحقق منه",
+        table_i2: "يلزم 100% من أخطاء العرض",
+        table_r3: "مفتاح API مكشوف في العميل",
+        table_s3: "استخدام مسارات API حصرياً",
+        table_i3: "أمان حرج",
+        table_r4: "لا تقييد المعدل",
+        table_s4: "تنفيذ عداد حسب العنوان IP",
+        table_i4: "يتجنب فواتير مفاجئة",
+        table_r5: "محتوى مولّد غير مُتحقق منه",
+        table_s5: "مراجعة يدوية + فلتر إشراف",
+        table_i5: "جودة وامتثال قانوني",
+        toc_items: [
+          { id: "intro", text: "المقدمة" },
+          { id: "section1", text: "1. خطوات خط الأنفاق التقني" },
+          { id: "section2", text: "2. الأخطاء لتجنبها" },
+          { id: "section3", text: "3. ارتقِ بمشروعك" },
+          { id: "conclusion", text: "الخاتمة" }
+        ],
+        content: `
+          <h2 id="intro">المقدمة: كابوس صفحات المنتجات</h2>
+          <p>لديك <strong>200 منتج</strong> للنشر عبر الإنترنت. كل صفحة تحتاج عنواناً محسناً للبحث (SEO) ووصفاً جذاباً ومواصفات فنية ووصف meta. بالسرعة اليدوية، هذا يعني <strong>3 أسابيع من العمل المتكرر</strong> — و منافسوك đã أطلقوا كتالوجهم بالفعل.</p>
+          <p>في هذا الدليل، سنبني <strong>خط أنفاق أتمتة كامل</strong> يحول CSV بسيط من المنتجات إلى صفحات تجارة إلكترونية جاهزة للنشر، من خلال الجمع بين قوة <strong>Next.js</strong> و ذكاء <strong>ChatGPT</strong>.</p>
+
+          <h2 id="section1">Section 1: خطوات خط الأنفاق التقني</h2>
+          <h3>1.1 الهيكل العام</h3>
+          <p>يعتمد حلنا على ثلاث ركائز:</p>
+          <ul>
+            <li><strong>ملف CSV منظم</strong> يحتوي على البيانات الخام لمنتجاتك</li>
+            <li><strong>مسار API في Next.js</strong> ينسق الاتصال بـ OpenAI</li>
+            <li><strong>مكون React</strong> يعرض ويدير التوليد في الوقت الفعلي</li>
+          </ul>
+
+          <h3>1.2 مسار API في Next.js</h3>
+          <p>هذا هو قلب نظامنا. إليك نقطة النهاية التي تستقبل بيانات المنتج وترجع المحتوى المولّد:</p>
+
+          <pre><code><span class="code-lang">TypeScript</span>
+<span class="cm">// app/api/generate-product/route.ts</span>
+<span class="kw">import</span> { NextRequest, NextResponse } <span class="kw">from</span> <span class="str">'next/server'</span>;
+<span class="kw">import</span> OpenAI <span class="kw">from</span> <span class="str">'openai'</span>;
+
+<span class="kw">const</span> openai = <span class="kw">new</span> <span class="fn">OpenAI</span>({
+  apiKey: process.env.<span class="prop">OPENAI_API_KEY</span>,
+});
+
+<span class="kw">interface</span> <span class="type">ProductInput</span> {
+  name: <span class="type">string</span>;
+  category: <span class="type">string</span>;
+  price: <span class="type">number</span>;
+  features: <span class="type">string</span>[];
+  brand?: <span class="type">string</span>;
+}
+
+<span class="kw">export async function</span> <span class="fn">POST</span>(request: <span class="type">NextRequest</span>) {
+  <span class="kw">try</span> {
+    <span class="kw">const</span> product: <span class="type">ProductInput</span> = <span class="kw">await</span> request.<span class="fn">json</span>();
+
+    <span class="kw">const</span> prompt = <span class="str">\`
+      أنت خبير في كتابة محتوى التجارة الإلكترونية.
+      أنشئ صفحة منتج كاملة لـ:
+      - الاسم: \${product.name}
+      - الفئة: \${product.category}
+      - السعر: \${product.price}€
+      - العلامة التجارية: \${product.brand || 'غير محددة'}
+      - الميزات: \${product.features.join(', ')}
+
+      قدم: عنوان SEO (حد أقصى 60 حرف)، وصف meta
+      (حد أقصى 155 حرف)، وصف كامل، و 5 نقاط رئيسية.
+      \`</span>;
+
+    <span class="kw">const</span> completion = <span class="kw">await</span> openai.chat.completions.<span class="fn">create</span>({
+      model: <span class="str">'gpt-4o'</span>,
+      messages: [{ role: <span class="str">'user'</span>, content: prompt }],
+      temperature: <span class="num">0.7</span>,
+      max_tokens: <span class="num">1500</span>,
+    });
+
+    <span class="kw">const</span> generatedContent = completion.choices[<span class="num">0</span>].message?.content;
+
+    <span class="kw">return</span> NextResponse.<span class="fn">json</span>({
+      success: <span class="num">true</span>,
+      content: generatedContent,
+      usage: completion.usage,
+    });
+  } <span class="kw">catch</span> (error) {
+    <span class="kw">return</span> NextResponse.<span class="fn">json</span>(
+      { success: <span class="num">false</span>, error: <span class="str">'خطأ في التوليد'</span> },
+      { status: <span class="num">500</span> }
+    );
+  }
+}</code></pre>
+
+          <h3>1.3 مكون الواجهة الأمامية React</h3>
+          <p>مكون نظيف يتعامل مع الإرسال وعرض النتيجة:</p>
+
+          <pre><code><span class="code-lang">TypeScript</span>
+<span class="cm">// components/ProductGenerator.tsx</span>
+<span class="str">'use client'</span>;
+<span class="kw">import</span> { useState } <span class="kw">from</span> <span class="str">'react'</span>;
+
+<span class="kw">export default function</span> <span class="fn">ProductGenerator</span>() {
+  <span class="kw">const</span> [loading, setLoading] = <span class="fn">useState</span>(<span class="num">false</span>);
+  <span class="kw">const</span> [result, setResult] = <span class="fn">useState</span>(<span class="str">''</span>);
+  <span class="kw">const</span> [form, setForm] = <span class="fn">useState</span>({
+    name: <span class="str">''</span>, category: <span class="str">''</span>,
+    price: <span class="num">0</span>, features: <span class="str">''</span>,
+  });
+
+  <span class="kw">const</span> <span class="fn">handleSubmit</span> = <span class="kw">async</span> (e: React.FormEvent) =&gt; {
+    e.<span class="fn">preventDefault</span>();
+    <span class="fn">setLoading</span>(<span class="num">true</span>);
+
+    <span class="kw">const</span> res = <span class="kw">await</span> <span class="fn">fetch</span>(<span class="str">'/api/generate-product'</span>, {
+      method: <span class="str">'POST'</span>,
+      headers: { <span class="str">'Content-Type'</span>: <span class="str">'application/json'</span> },
+      body: JSON.<span class="fn">stringify</span>({
+        ...form,
+        price: <span class="fn">Number</span>(form.price),
+        features: form.features.<span class="fn">split</span>(<span class="str">','</span>).<span class="fn">map</span>(f =&gt; f.<span class="fn">trim</span>()),
+      }),
+    });
+
+    <span class="kw">const</span> data = <span class="kw">await</span> res.<span class="fn">json</span>();
+    <span class="fn">setResult</span>(data.content);
+    <span class="fn">setLoading</span>(<span class="num">false</span>);
+  };
+
+  <span class="kw">return</span> (
+    &lt;<span class="tag">div</span> <span class="attr">className</span>=<span class="val">"generator-card"</span>&gt;
+      &lt;<span class="tag">h2</span>&gt;مولد صفحات المنتجات&lt;/<span class="tag">h2</span>&gt;
+      &lt;<span class="tag">form</span> <span class="attr">onSubmit</span>={handleSubmit}&gt;
+        &lt;<span class="tag">input</span> <span class="attr">placeholder</span>=<span class="val">"اسم المنتج"</span>
+          <span class="attr">onChange</span>={e =&gt; <span class="fn">setForm</span>({...form, name: e.target.value})} /&gt;
+        &lt;<span class="tag">input</span> <span class="attr">placeholder</span>=<span class="val">"الفئة"</span>
+          <span class="attr">onChange</span>={e =&gt; <span class="fn">setForm</span>({...form, category: e.target.value})} /&gt;
+        &lt;<span class="tag">input</span> <span class="attr">type</span>=<span class="val">"number"</span> <span class="attr">placeholder</span>=<span class="val">"السعر"</span>
+          <span class="attr">onChange</span>={e =&gt; <span class="fn">setForm</span>({...form, price: e.target.value})} /&gt;
+        &lt;<span class="tag">textarea</span> <span class="attr">placeholder</span>=<span class="val">"الميزات (مفصولة بفواصل)"</span>
+          <span class="attr">onChange</span>={e =&gt; <span class="fn">setForm</span>({...form, features: e.target.value})} /&gt;
+        &lt;<span class="tag">button</span> <span class="attr">type</span>=<span class="val">"submit"</span> <span class="attr">disabled</span>={loading}&gt;
+          {loading ? <span class="str">'جارٍ التوليد...'</span> : <span class="str">'توليد الصفحة'</span>}
+        &lt;/<span class="tag">button</span>&gt;
+      &lt;/<span class="tag">form</span>&gt;
+      {result &amp;&amp; (
+        &lt;<span class="tag">div</span> <span class="attr">className</span>=<span class="val">"result"</span>
+          <span class="attr">dangerouslySetInnerHTML</span>={{ __html: result }} /&gt;
+      )}
+    &lt;/<span class="tag">div</span>&gt;
+  );
+}</code></pre>
+
+          <h3>1.4 ملف .env.local</h3>
+          <p>لا ت exposes مفاتيح API الخاصة بك من جانب العميل أبداً:</p>
+
+          <pre><code><span class="code-lang">env</span>
+<span class="cm"># .env.local</span>
+<span class="prop">OPENAI_API_KEY</span>=<span class="str">sk-مفتاح-api-الخاص-بك-هنا</span>
+<span class="prop">NEXT_PUBLIC_SITE_URL</span>=<span class="str">https://موقعك.com</span>
+<span class="prop">RATE_LIMIT_MAX</span>=<span class="num">50</span>
+<span class="prop">RATE_LIMIT_WINDOW</span>=<span class="num">60000</span></code></pre>
+
+          <h3>1.5 Rate Limiter</h3>
+          <p>احمِ نقطة النهاية الخاصة بك ضد سوء الاستخدام:</p>
+
+          <pre><code><span class="code-lang">TypeScript</span>
+<span class="cm">// lib/rate-limiter.ts</span>
+<span class="kw">const</span> requests = <span class="kw">new</span> <span class="fn">Map</span>&lt;<span class="type">string</span>, <span class="type">number</span>[]&gt;();
+
+<span class="kw">export function</span> <span class="fn">rateLimit</span>(
+  ip: <span class="type">string</span>,
+  maxRequests = <span class="num">50</span>,
+  windowMs = <span class="num">60000</span>
+): <span class="type">boolean</span> {
+  <span class="kw">const</span> now = Date.<span class="fn">now</span>();
+  <span class="kw">const</span> timestamps = requests.<span class="fn">get</span>(ip) || [];
+  <span class="kw">const</span> valid = timestamps.<span class="fn">filter</span>(t =&gt; now - t &lt; windowMs);
+
+  <span class="kw">if</span> (valid.length &gt;= maxRequests) <span class="kw">return false</span>;
+
+  valid.<span class="fn">push</span>(now);
+  requests.<span class="fn">set</span>(ip, valid);
+  <span class="kw">return true</span>;
+}</code></pre>
+
+          <h2 id="section2">Section 2: الأخطاء التي يجب تجنبها والممارسات الصحيحة</h2>
+          <p>إليك أكثر الأخطاء شيوعاً وكيفية التغلب عليها:</p>
+
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th data-i18n="table_mistake">❌ خطأ شائع</th>
+                <th data-i18n="table_solution">✅ الحل</th>
+                <th data-i18n="table_impact">💡 التأثير</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-i18n="table_r1">إرسال الكتالوج بالكامل دفعة واحدة</td>
+                <td data-i18n="table_s1">المعالجة على دفعات من 10-20 منتج</td>
+                <td data-i18n="table_i1">يقلل أوقات الانتظار بنسبة 90%</td>
+              </tr>
+              <tr>
+                <td data-i18n="table_r2">لا تحقق من استجابات الذكاء الاصطناعي</td>
+                <td data-i18n="table_s2">تحليل JSON المرتجع والتحقق منه</td>
+                <td data-i18n="table_i2">يلزم 100% من أخطاء العرض</td>
+              </tr>
+              <tr>
+                <td data-i18n="table_r3">مفتاح API مكشوف في العميل</td>
+                <td data-i18n="table_s3">استخدام مسارات API حصرياً</td>
+                <td data-i18n="table_i3">أمان حرج</td>
+              </tr>
+              <tr>
+                <td data-i18n="table_r4">لا تقييد المعدل</td>
+                <td data-i18n="table_s4">تنفيذ عداد حسب العنوان IP</td>
+                <td data-i18n="table_i4">يتجنب فواتير مفاجئة</td>
+              </tr>
+              <tr>
+                <td data-i18n="table_r5">محتوى مولّد غير مُتحقق منه</td>
+                <td data-i18n="table_s5">مراجعة يدوية + فلتر إشراف</td>
+                <td data-i18n="table_i5">جودة وامتثال قانوني</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><strong>الخطأ رقم 1</strong>: إرسال النصوص الأولية بدون هيكل. ChatGPT يُرجع نصاً غير منظم. الحل: فرض <strong>تنسيق JSON صارم</strong> في نصك الأولي وتحليل الاستجابة.</p>
+
+          <p><strong>الخطأ رقم 2</strong>: تجاهل الرموز المميزة. كل استدعاء لـ GPT-4o يكلف في الرموز. لـ 1000 منتج، يرتفع بسرعة. <strong>نصيحة</strong>: استخدم GPT-4o-mini للوصف البسيط و GPT-4o فقط للمحتوى الحرج.</p>
+
+          <h2 id="section3">Section 3: ارتقِ بمشروعك مع UcfZem Tech</h2>
+          <p>الكود أعلاه نقطة انطلاق ممتازة، لكن للإنتاج على نطاق واسع تحتاج إلى:</p>
+          <ul>
+            <li><strong>المراقبة في الوقت الفعلي</strong> — معرفة عدد المنتجات المولّدة ومعدلات الأخطاء والتأخيرات</li>
+            <li><strong>التخزين المؤقت الذكي</strong> — عدم إعادة توليد منتج متماثل مرتين</li>
+            <li><strong>دمج نظام إدارة المحتوى</strong> — دفع الصفحات تلقائياً إلى Shopify أو WooCommerce أو نظام إدارة المحتوى الخاص بك</li>
+            <li><strong>متعدد اللغات</strong> — توليد الصفحات بالفرنسية والإنجليزية والإسبانية والعربية تلقائياً</li>
+          </ul>
+
+          <div class="cta-section">
+            <h3 data-i18n="cta_title">🚀 هل أنت مستعد لأتمتة كتالوجك؟</h3>
+            <p data-i18n="cta_desc">UcfZem Tech يرافقك في تنفيذ حلول أتمتة التجارة الإلكترونية المخصصة.</p>
+            <div class="cta-buttons">
+              <button class="cta-btn cta-btn-primary" data-i18n="cta_primary" onclick="window.location.href='mailto:azer.tyu199p@gmail.com?subject=%D8%B7%D9%84%D8%A8%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9'">بدء مشروع</button>
+              <button class="cta-btn cta-btn-secondary" data-i18n="cta_secondary" onclick="window.open('https://ucfzem.github.io/works/', '_blank')">عرض الأعمال</button>
+            </div>
+          </div>
+
+          <h2 id="conclusion">الخاتمة: من الأتمتة إلى الهيمنة</h2>
+          <p>أتمتة صفحات المنتجات ليست ترفاً — إنها <strong>ميزة تنافسية حيوية</strong>. مع Next.js و ChatGPT، لديك خط أنفاق سريع وآمن وقابل للتوسع.</p>
+          <p>الخطوات الرئيسية للتذكر:</p>
+          <ol>
+            <li>هيكل بيانات منتجاتك في CSV نظيف</li>
+            <li>بناء مسار API في Next.js متين مع تقييد المعدل</li>
+            <li>تحقق دائماً من استجابات الذكاء الاصطناعي قبل الإدراج</li>
+            <li>تنفيذ تخزين مؤقت لتحسين تكاليف API</li>
+            <li>ابدأ صغيراً، ثم توسع تدريجياً</li>
+          </ol>
+          <p>منافسوك ما زالوا يقضون أيامهم في كتابة صفحات المنتجات يدوياً. أنت يمكنك <strong>أتمتة العملية بأكملها</strong> وتخصيص وقتك لما يهم حقاً: البيع.</p>
+        `,
+        related: [
+          { tag: "Next.js", title: "تحسين SEO مع Next.js App Router", desc: "دليل شامل للمرجعة الطبيعية.", url: "https://ucfzem.github.io/ucfzem-blog/" },
+          { tag: "الذكاء الاصطناعي", title: "دمج الذكاء الاصطناعي في سير عمل التجارة الإلكترونية", desc: "من روبوتات المحادثة إلى الأوصاف التلقائية.", url: "https://ucfzem.github.io/ucfzem-blog/" },
+          { tag: "الأداء", title: "تقليل Time to First Byte بنسبة 60%", desc: "تقنيات متقدمة لتحسين الخادم.", url: "https://ucfzem.github.io/ucfzem-blog/" }
+        ]
+      }
+    };
+
+    // ============================================================
+    // STATE
+    // ============================================================
+    let currentLang = localStorage.getItem('lang') || 'fr';
     let currentTheme = localStorage.getItem('theme') || 'light';
+
+    // ============================================================
+    // THEME TOGGLE
+    // ============================================================
     function applyTheme(theme) {
       document.documentElement.setAttribute('data-theme', theme);
-      themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+      document.getElementById('theme-toggle').textContent = theme === 'dark' ? '☀️' : '🌙';
       localStorage.setItem('theme', theme);
       currentTheme = theme;
     }
-    themeToggle.addEventListener('click', () => {
+
+    document.getElementById('theme-toggle').addEventListener('click', () => {
       applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
     });
+
     applyTheme(currentTheme);
 
-    // Progress bar
+    // ============================================================
+    // LANGUAGE SWITCHER
+    // ============================================================
+    function applyLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('lang', lang);
+      const t = I18N[lang];
+      const isRTL = lang === 'ar';
+
+      document.documentElement.lang = lang;
+      document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key]) el.textContent = t[key];
+      });
+
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (t[key]) el.placeholder = t[key];
+      });
+
+      document.getElementById('article-content').innerHTML = t.content;
+
+      const tocList = document.getElementById('toc-list');
+      tocList.innerHTML = t.toc_items.map(item =>
+        `<li><a href="#${item.id}">${item.text}</a></li>`
+      ).join('');
+
+      document.getElementById('related-grid').innerHTML = t.related.map(r =>
+        `<div class="related-card" onclick="window.location.href='${r.url}'" role="link" tabindex="0">
+          <span class="related-card-tag">${r.tag}</span>
+          <h4>${r.title}</h4>
+          <p>${r.desc}</p>
+        </div>`
+      ).join('');
+
+      document.title = t.title + ' | UcfZem Tech';
+      initTOCObserver();
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+    });
+
+    applyLang(currentLang);
+
+    // ============================================================
+    // PROGRESS BAR
+    // ============================================================
     window.addEventListener('scroll', () => {
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      document.getElementById('progress-bar').style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      document.getElementById('progress-bar').style.width = progress + '%';
     });
 
-    // Back to top
+    // ============================================================
+    // BACK TO TOP
+    // ============================================================
     const backToTop = document.getElementById('back-to-top');
     window.addEventListener('scroll', () => {
       backToTop.classList.toggle('visible', window.scrollY > 400);
@@ -1252,11 +2269,14 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // TOC highlight
-    function initTOC() {
+    // ============================================================
+    // TOC HIGHLIGHT ON SCROLL
+    // ============================================================
+    function initTOCObserver() {
       const headings = document.querySelectorAll('.article-content h2[id]');
       const tocLinks = document.querySelectorAll('#toc-list a');
       if (!headings.length || !tocLinks.length) return;
+
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -1266,19 +2286,55 @@
           }
         });
       }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+
       headings.forEach(h => observer.observe(h));
     }
-    initTOC();
 
-    // Mobile TOC toggle
+    // ============================================================
+    // MOBILE TOC TOGGLE
+    // ============================================================
     document.getElementById('toc-toggle').addEventListener('click', () => {
       document.getElementById('toc').classList.toggle('open');
     });
+
+    // Close TOC on link click (mobile)
     document.getElementById('toc-list').addEventListener('click', (e) => {
       if (e.target.tagName === 'A') {
         document.getElementById('toc').classList.remove('open');
       }
     });
+
+    // ============================================================
+    // SHARE BUTTONS
+    // ============================================================
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        const btn = document.querySelector('.share-btn');
+        const original = btn.innerHTML;
+        btn.innerHTML = '✅ Copié!';
+        setTimeout(() => btn.innerHTML = original, 2000);
+      });
+    }
+
+    function shareTwitter() {
+      const text = encodeURIComponent(document.title);
+      window.open(`https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent(window.location.href)}`, '_blank');
+    }
+
+    function shareLinkedIn() {
+      window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank');
+    }
+
+    // ============================================================
+    // NEWSLETTER FORM
+    // ============================================================
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('newsletter-email').value;
+      const subject = encodeURIComponent("Inscription Newsletter - UcfZem Tech");
+      const body = encodeURIComponent(`Bonjour,\n\nJe souhaite m'inscrire à la newsletter avec l'adresse : ${email}\n\nMerci.`);
+      window.location.href = `mailto:azer.tyu199p@gmail.com?subject=${subject}&body=${body}`;
+    }
   </script>
 </body>
 </html>
